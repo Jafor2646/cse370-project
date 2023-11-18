@@ -1,2 +1,9 @@
-package com.amakakeru.mangaworld.dao;public interface ChapterRepository {
+package com.amakakeru.mangaworld.dao;
+
+import com.amakakeru.mangaworld.entity.Chapter;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ChapterRepository extends JpaRepository<Chapter, Long> {
 }

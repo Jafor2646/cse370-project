@@ -12175,7 +12175,7 @@ INSERT INTO `publisher_manga` (`p_id`, `m_id`) VALUES
 
 
 
-INSERT INTO `catagory` (`c_name`) VALUES
+INSERT INTO `category` (`c_name`) VALUES
 ('Action'),
 ('Adventure'),
 ('Fantasy'),
@@ -12266,7 +12266,7 @@ INSERT INTO `catagory` (`c_name`) VALUES
 
 
 
-INSERT INTO `catagory_manga` (`c_id`, `m_id`) VALUES 
+INSERT INTO `category_manga` (`c_id`, `m_id`) VALUES 
 (43, 45),
 (34, 21),
 (67, 77),
@@ -20750,7 +20750,7 @@ INSERT INTO `wishlist` (`user_id`, `m_id`, `added_date`) VALUES
 
 
 
-INSERT INTO `on_going` (`user_id`, `m_id`, `current_volume`, `current_chapter`) VALUES 
+INSERT INTO `ongoing` (`user_id`, `m_id`, `current_volume`, `current_chapter`) VALUES 
 (21, 33, 1, 6),
 (94, 54, 1, 7),
 (11, 13, 9, 6),

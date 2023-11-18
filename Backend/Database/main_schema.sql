@@ -27,19 +27,18 @@ CREATE TABLE `profile_picture` (
   `picture` MEDIUMBLOB NOT NULL,
   `user_id` int NOT NULL,
   PRIMARY KEY (`picture_id`),
-  UNIQUE (`user_id`), 
-  CONSTRAINT `FK_USER_PP` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-  
+  UNIQUE (`user_id`),
+  CONSTRAINT `FK_USER_PP` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+  
 
 -- Create User Type Table
 
 CREATE TABLE `user_type` (
   `ut_id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
+  `user_id` int NOT NULL UNIQUE,
   `type` varchar(10) NOT NULL,
   PRIMARY KEY (`ut_id`),
-  UNIQUE (`user_id`),
   CONSTRAINT `FK_USER_UT` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
@@ -62,9 +61,8 @@ CREATE TABLE `manga` (
 CREATE TABLE `manga_picture` (
   `mp_id` int NOT NULL AUTO_INCREMENT,
   `mp_picture` MEDIUMBLOB NOT NULL,
-  `m_id` int NOT NULL,
+  `m_id` int NOT NULL UNIQUE,
   PRIMARY KEY (`mp_id`),
-  UNIQUE (`m_id`),
   CONSTRAINT `FK_MANGA_MP` FOREIGN KEY (`m_id`) REFERENCES `manga` (`m_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
@@ -88,9 +86,8 @@ CREATE TABLE `volume` (
 CREATE TABLE `volume_cover` (
   `vc_id` int NOT NULL AUTO_INCREMENT,
   `vc_picture` MEDIUMBLOB NOT NULL,
-  `v_id` int NOT NULL,
+  `v_id` int NOT NULL UNIQUE,
   PRIMARY KEY (`vc_id`),
-  UNIQUE (`v_id`),
   CONSTRAINT `FK_VOLUME_VC` FOREIGN KEY (`v_id`) REFERENCES `volume` (`v_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
@@ -114,9 +111,8 @@ CREATE TABLE `chapter` (
 CREATE TABLE `chapter_cover` (
   `cc_id` int NOT NULL AUTO_INCREMENT,
   `cc_picture` MEDIUMBLOB NOT NULL,
-  `c_id` int NOT NULL,
+  `c_id` int NOT NULL UNIQUE,
   PRIMARY KEY (`cc_id`),
-  UNIQUE (`c_id`),
   CONSTRAINT `FK_CHAPTER_CC` FOREIGN KEY (`c_id`) REFERENCES `chapter` (`c_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
@@ -126,12 +122,12 @@ CREATE TABLE `chapter_cover` (
 CREATE TABLE `manga_file` (
   `mf_id` int NOT NULL AUTO_INCREMENT,
   `mf_file` LONGBLOB NOT NULL,
-  `c_id` int NOT NULL,
+  `c_id` int NOT NULL UNIQUE,
   PRIMARY KEY (`mf_id`),
-  UNIQUE (`c_id`),
   CONSTRAINT `FK_CHAPTER_MF` FOREIGN KEY (`c_id`) REFERENCES `chapter` (`c_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+
 
 -- Create Author Table
 
@@ -149,9 +145,8 @@ CREATE TABLE `author` (
 CREATE TABLE `author_picture` (
   `ap_id` int NOT NULL AUTO_INCREMENT,
   `ap_picture` MEDIUMBLOB NOT NULL,
-  `a_id` int NOT NULL,
+  `a_id` int NOT NULL UNIQUE,
   PRIMARY KEY (`ap_id`),
-  UNIQUE (`a_id`),
   CONSTRAINT `FK_AUTHOR_AP` FOREIGN KEY (`a_id`) REFERENCES `author` (`a_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
@@ -182,9 +177,8 @@ CREATE TABLE `publisher` (
 CREATE TABLE `publisher_picture` (
   `pp_id` int NOT NULL AUTO_INCREMENT,
   `pp_picture` MEDIUMBLOB NOT NULL,
-  `p_id` int NOT NULL,
+  `p_id` int NOT NULL UNIQUE,
   PRIMARY KEY (`pp_id`),
-  UNIQUE (`p_id`),
   CONSTRAINT `FK_PUBLISHER_PP` FOREIGN KEY (`p_id`) REFERENCES `publisher` (`p_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
@@ -199,22 +193,22 @@ CREATE TABLE `publisher_manga` (
   CONSTRAINT `FK_MANGA_PM` FOREIGN KEY (`m_id`) REFERENCES `manga` (`m_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Create Catagory Table
+-- Create Category Table
 
-CREATE TABLE `catagory` (
+CREATE TABLE `category` (
   `c_id` int NOT NULL AUTO_INCREMENT,
   `c_name` varchar(512) NOT NULL,
   PRIMARY KEY (`c_id`)
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 
--- Create Catagory Manga Junction Table
+-- Create Category Manga Junction Table
 
-CREATE TABLE `catagory_manga` (
+CREATE TABLE `category_manga` (
   `c_id` int NOT NULL,
   `m_id` int NOT NULL,
   PRIMARY KEY (`c_id`, `m_id`),
-  CONSTRAINT `FK_CATAGORY_CM` FOREIGN KEY (`c_id`) REFERENCES `catagory` (`c_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_CATEGORY_CM` FOREIGN KEY (`c_id`) REFERENCES `category` (`c_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_MANGA_CM` FOREIGN KEY (`m_id`) REFERENCES `manga` (`m_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -265,9 +259,9 @@ CREATE TABLE `wishlist` (
   CONSTRAINT `FK_MANGA_W` FOREIGN KEY (`m_id`) REFERENCES `manga` (`m_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Create on_going Table
+-- Create ongoing Table
 
-CREATE TABLE `on_going` (
+CREATE TABLE `ongoing` (
   `user_id` int NOT NULL,
   `m_id` int NOT NULL,
   `current_volume` int DEFAULT 0,
