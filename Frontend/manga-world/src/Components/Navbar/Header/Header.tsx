@@ -46,10 +46,10 @@ function Header() {
         <SearchBar />
 
         <div>
-          <button className="p-1 border-white border-2 rounded-lg hover:bg-white hover:text-black hover:border-teal-500 active:bg-gray-500 font-bold me-2">
+          <button className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
             Login
           </button>
-          <button className="p-1 border-white border-2 rounded-lg hover:bg-white hover:text-black hover:border-teal-500 active:bg-gray-500 font-bold">
+          <button className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
             Sign Up
           </button>
         </div>

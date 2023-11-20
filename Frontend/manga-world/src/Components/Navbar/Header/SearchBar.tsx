@@ -46,7 +46,7 @@ function SearchBar() {
           className="w-full text-black border-white border-2 rounded-lg p-1 hover:bg-white hover:text-black hover:border-teal-500 active:bg-gray-500 font-bold"
         />
       </div>
-      <button className="p-1 border-white border-2 rounded-lg hover:bg-white hover:text-black hover:border-teal-500 active:bg-gray-500 font-bold me-20 ms-1">
+      <button className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded-lg focus:outline-none focus:shadow-outline me-20 ms-1">
         Search
       </button>
     </>
