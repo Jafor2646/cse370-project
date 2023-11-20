@@ -4,7 +4,7 @@ function SearchBar() {
   const [inputPlaceholder, setInputPlaceholder] = useState<string>("Tomie");
 
   useEffect(() => {
-    const placeholders = ["Placeholder 1", "Placeholder 2", "Placeholder 3"];
+    const placeholders = ["Hellsing", "The Disastrous Life of Saiki K.", "Vinland Saga"];
     let currentIndex = 0;
     let currentPlaceholder = "";
 

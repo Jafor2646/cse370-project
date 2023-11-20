@@ -1,13 +1,26 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Header from "./Components/Navbar/Header/Header";
-import Footer from "./Components/Navbar/Footer/Footer";
+import RoutingPage from "./Components/RoutingPage";
+import Homepage from "./Components/Homepage/Homepage";
+import Login from "./Components/Authentication/Login/Login";
+import Signup from "./Components/Authentication/Signup/Signup";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RoutingPage />,
+    children: [
+      { path: "/", element: <Homepage/> },
+      { path: "/home", element: <Homepage/> },
+      { path: "/login", element: <Login/> },
+      { path: "/signup", element: <Signup/> },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <>
-      <Header />
-      <Footer />
-    </>
+      <RouterProvider router={router}></RouterProvider>
   );
 }
 

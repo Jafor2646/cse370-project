@@ -24,7 +24,7 @@ function Login() {
   };
 
   return (
-    <div className="background_image">
+    <div className="background_image_login">
       <div className="flex justify-center items-center h-screen">
         <form
           onSubmit={handleSubmit}

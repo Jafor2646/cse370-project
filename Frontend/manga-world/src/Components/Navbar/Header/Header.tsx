@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+import {Link} from "react-router-dom";
 
 function Header() {
   const [logoSrc, setLogoSrc] = useState<string>(
@@ -10,6 +11,7 @@ function Header() {
     <>
       <div className="flex bg-black text-white text-2xl items-center justify-between mx-auto">
         <div className="flex items-center">
+          <Link to={"/"}>
           <img
             src={logoSrc}
             alt="Anime World Logo"
@@ -40,18 +42,19 @@ function Header() {
               );
             }}
           />
+          </Link>
           <p className="font-bold text-3xl pl-1">Manga World</p>
         </div>
 
         <SearchBar />
 
         <div>
-          <button className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
+          <Link to="/login" className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
             Login
-          </button>
-          <button className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
+          </Link>
+          <Link to="/signup" className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
             Sign Up
-          </button>
+          </Link>
         </div>
       </div>
     </>

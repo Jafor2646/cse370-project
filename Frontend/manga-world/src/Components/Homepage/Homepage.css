@@ -1,5 +1,5 @@
-.background_image_signup {
-    background-image: url("./../../../Assets/Images/Backgrounds/signup-page-bg.jpg");
+.background_image_home {
+    background-image: url("./../../Assets/Images/Backgrounds/home-page-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -24,7 +24,7 @@ function Signup() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen background_image">
+    <div className="flex justify-center items-center h-screen background_image_signup">
       <div className="bg-gray-950 text-white shadow-md rounded px-8 py-8 mb-4">
         <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
         <form onSubmit={handleSubmit}>
