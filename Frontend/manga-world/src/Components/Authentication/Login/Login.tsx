@@ -1,17 +1,41 @@
 import React, { useState } from "react";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberPassword, setRememberPassword] = useState(false); // Add state for remember password checkbox
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+    const inputEmail = e.target.value;
+    setEmail(inputEmail);
+
+    // Email validation regex pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(inputEmail)) {
+      setEmailError("Please enter a valid email address");
+    } else {
+      setEmailError("");
+    }
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
+    const inputPassword = e.target.value;
+    setPassword(inputPassword);
+
+    // Password validation regex pattern
+    const passwordPattern = /^[A-Za-z\d]{4,}$/
+    ;
+
+    if (!passwordPattern.test(inputPassword)) {
+      setPasswordError("Password must be at least 4 characters");
+    } else {
+      setPasswordError("");
+    }
   };
 
   const handleRememberPasswordChange = () => {
@@ -46,6 +70,9 @@ function Login() {
               value={email}
               onChange={handleEmailChange}
             />
+            {emailError && (
+              <p className="text-red-500 text-xs italic">{emailError}</p>
+            )}
           </div>
           <div className="mb-6">
             <label
@@ -62,6 +89,9 @@ function Login() {
               value={password}
               onChange={handlePasswordChange}
             />
+            {passwordError && (
+              <p className="text-red-500 text-xs italic">{passwordError}</p>
+            )}
           </div>
           <div className="mb-6">
             <label className="text-white text-sm font-bold mb-2 flex items-center">
@@ -83,9 +113,9 @@ function Login() {
             </button>
           </div>
           <div>
-            <a href="#" className="text-white text-sm font-bold mb-2">
+            <Link to="/signup" className="text-white text-sm font-bold mb-2">
               Or, Create New Account
-            </a>
+            </Link>
           </div>
         </form>
       </div>

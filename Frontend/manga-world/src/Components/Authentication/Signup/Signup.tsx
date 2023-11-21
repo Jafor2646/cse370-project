@@ -1,21 +1,56 @@
 import React, { useState } from "react";
 import "./Signup.css";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [nameError, setNameError] = useState("");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+    const inputEmail = e.target.value;
+    setEmail(inputEmail);
+
+    // Email validation regex pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(inputEmail)) {
+      setEmailError("Please enter a valid email address");
+    } else {
+      setEmailError("");
+    }
   };
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+    const inputName = e.target.value;
+    setName(inputName);
+
+    // Name validation regex pattern
+    const namePattern = /^[A-Za-z\d]{3,}$/
+
+    if (!namePattern.test(inputName)) {
+      setNameError("Name must be at least 3 characters");
+    } else {
+      setNameError("");
+    }
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
+    const inputPassword = e.target.value;
+    setPassword(inputPassword);
+
+    // Password validation regex pattern
+    const passwordPattern = /^[A-Za-z\d]{4,}$/
+    ;
+
+    if (!passwordPattern.test(inputPassword)) {
+      setPasswordError("Password must be at least 4 characters");
+    } else {
+      setPasswordError("");
+    }
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,6 +78,9 @@ function Signup() {
               value={email}
               onChange={handleEmailChange}
             />
+            {emailError && (
+              <p className="text-red-500 text-xs italic">{emailError}</p>
+            )}
           </div>
           <div className="mb-6">
             <label
@@ -59,6 +97,9 @@ function Signup() {
               value={name}
               onChange={handleNameChange}
             />
+            {nameError && (
+                <p className="text-red-500 text-xs italic">{nameError}</p>
+            )}
           </div>
           <div className="mb-6">
             <label
@@ -75,6 +116,9 @@ function Signup() {
               value={password}
               onChange={handlePasswordChange}
             />
+            {passwordError && (
+                <p className="text-red-500 text-xs italic">{passwordError}</p>
+            )}
           </div>
           <div className="flex items-center justify-center">
             <button
@@ -85,9 +129,9 @@ function Signup() {
             </button>
           </div>
           <div>
-            <a href="#" className="text-white text-sm font-bold mb-2">
+            <Link to="/login" className="text-white text-sm font-bold mb-2">
               Already have an account?
-            </a>
+            </Link>
           </div>
         </form>
       </div>
