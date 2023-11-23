@@ -7,18 +7,18 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name = "user_type")
-public class UserType implements Serializable {
+@Table(name = "authorities")
+public class Authorities implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ut_id")
-    private Long utId;
+    @Column(name = "auth_id")
+    private Long authId;
 
     @Column(name = "type", nullable = false)
     private String type;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false, unique = true)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private User user;
 }

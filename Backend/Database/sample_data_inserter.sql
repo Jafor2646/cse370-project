@@ -106,14 +106,19 @@ INSERT INTO `user` (`name`, `email`, `password`) VALUES
 
 
 
-INSERT INTO `user_type` (`user_id`, `type`)
+INSERT INTO `authorities` (`user_id`, `type`)
 VALUES
 -- Admin Users
 (1, 'admin'),
+(1, 'general'),
 (2, 'admin'),
+(2, 'general'),
 (3, 'admin'),
+(3, 'general'),
 (4, 'admin'),
+(4, 'general'),
 (5, 'admin'),
+(5, 'general'),
 -- General Users
 (6, 'general'),
 (7, 'general'),

@@ -35,6 +35,6 @@ public class Chapter implements Serializable {
     @OneToOne(mappedBy = "chapter", cascade = CascadeType.ALL, orphanRemoval = true)
     private ChapterCover chapterCover;
 
-    @OneToMany(mappedBy = "chapter", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MangaFile> mangaFiles;
+    @OneToOne(mappedBy = "chapter", cascade = CascadeType.ALL, orphanRemoval = true)
+    private MangaFile mangaFiles;
 }

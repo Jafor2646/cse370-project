@@ -25,6 +25,6 @@ public class SearchHistory implements Serializable {
     private Long userId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
     private User user;
 }

@@ -19,7 +19,7 @@ public class MangaPicture implements Serializable {
     @Column(name = "mp_picture", nullable = false)
     private byte[] mpPicture;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "m_id", nullable = false, unique = true)
     private Manga manga;
 }

@@ -31,8 +31,8 @@ public class Manga implements Serializable {
     @Column(name = "m_description", nullable = false, length = 5120)
     private String mDescription;
 
-    @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MangaPicture> mangaPictures;
+    @OneToOne(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
+    private MangaPicture mangaPicture;
 
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Volume> volumes;

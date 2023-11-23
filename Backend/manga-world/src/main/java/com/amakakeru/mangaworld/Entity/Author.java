@@ -30,4 +30,7 @@ public class Author implements Serializable {
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AuthorManga> authorMangas;
+
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Follow> follower;
 }

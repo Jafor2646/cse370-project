@@ -25,20 +25,19 @@ CREATE TABLE `user` (
 CREATE TABLE `profile_picture` (
   `picture_id` int NOT NULL AUTO_INCREMENT,
   `picture` MEDIUMBLOB NOT NULL,
-  `user_id` int NOT NULL,
+  `user_id` int NOT NULL UNIQUE,
   PRIMARY KEY (`picture_id`),
-  UNIQUE (`user_id`),
   CONSTRAINT `FK_USER_PP` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
   
 
 -- Create User Type Table
 
-CREATE TABLE `user_type` (
-  `ut_id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL UNIQUE,
+CREATE TABLE `authorities` (
+  `auth_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
   `type` varchar(10) NOT NULL,
-  PRIMARY KEY (`ut_id`),
+  PRIMARY KEY (`auth_id`),
   CONSTRAINT `FK_USER_UT` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
   
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci;
