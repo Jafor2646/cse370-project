@@ -1,5 +1,6 @@
 package com.amakakeru.mangaworld.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -25,9 +26,11 @@ public class Publisher implements Serializable {
     @Column(name = "p_description", nullable = false, length = 5120)
     private String pDescription;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "publisher", cascade = CascadeType.ALL, orphanRemoval = true)
     private PublisherPicture publisherPicture;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PublisherManga> publisherMangas;
 }

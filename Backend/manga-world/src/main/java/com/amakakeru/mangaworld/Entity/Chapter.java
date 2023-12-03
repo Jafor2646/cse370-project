@@ -1,5 +1,6 @@
 package com.amakakeru.mangaworld.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -28,13 +29,15 @@ public class Chapter implements Serializable {
     @Column(name = "c_view", nullable = false, columnDefinition = "int default 0")
     private int cView;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "v_id", nullable = false)
     private Volume volume;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "chapter", cascade = CascadeType.ALL, orphanRemoval = true)
     private ChapterCover chapterCover;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "chapter", cascade = CascadeType.ALL, orphanRemoval = true)
     private MangaFile mangaFiles;
 }

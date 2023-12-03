@@ -18,7 +18,7 @@ public class Authorities implements Serializable {
     @Column(name = "type", nullable = false)
     private String type;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private User user;
 }

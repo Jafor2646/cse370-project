@@ -20,7 +20,7 @@ public class VolumeCover implements Serializable {
     @Column(name = "vc_picture", nullable = false)
     private byte[] vcPicture;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "v_id", nullable = false, unique = true)
     private Volume volume;
 }

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberPassword, setRememberPassword] = useState(false); // Add state for remember password checkbox
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
@@ -13,7 +12,6 @@ function Login() {
     const inputEmail = e.target.value;
     setEmail(inputEmail);
 
-    // Email validation regex pattern
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(inputEmail)) {
@@ -27,7 +25,6 @@ function Login() {
     const inputPassword = e.target.value;
     setPassword(inputPassword);
 
-    // Password validation regex pattern
     const passwordPattern = /^[A-Za-z\d]{4,}$/
     ;
 
@@ -38,13 +35,10 @@ function Login() {
     }
   };
 
-  const handleRememberPasswordChange = () => {
-    setRememberPassword(!rememberPassword);
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle login logic here
+
+
   };
 
   return (
@@ -52,7 +46,7 @@ function Login() {
       <div className="flex justify-center items-center h-screen">
         <form
           onSubmit={handleSubmit}
-          className="bg-gray-950 text-white shadow-md rounded px-8 py-8 mb-4"
+          className="bg-gray-950 text-white shadow-md rounded-xl px-8 py-8 mb-4"
         >
           <h2 className="text-2xl font-bold mb-6">Log In</h2>
           <div className="mb-6">
@@ -92,17 +86,6 @@ function Login() {
             {passwordError && (
               <p className="text-red-500 text-xs italic">{passwordError}</p>
             )}
-          </div>
-          <div className="mb-6">
-            <label className="text-white text-sm font-bold mb-2 flex items-center">
-              <input
-                className="mr-2"
-                type="checkbox"
-                checked={rememberPassword}
-                onChange={handleRememberPasswordChange}
-              />
-              <span>Remember Password</span>
-            </label>
           </div>
           <div className="flex items-center justify-center">
             <button

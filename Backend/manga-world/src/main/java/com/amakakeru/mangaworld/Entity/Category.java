@@ -1,5 +1,6 @@
 package com.amakakeru.mangaworld.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,6 +20,7 @@ public class Category implements Serializable {
     @Column(name = "c_name", nullable = false)
     private String cName;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CategoryManga> categoryMangas;
 }

@@ -19,7 +19,7 @@ public class MangaFile implements Serializable {
     @Column(name = "mf_file", nullable = false)
     private byte[] mfFile;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "c_id", nullable = false)
     private Chapter chapter;
 }

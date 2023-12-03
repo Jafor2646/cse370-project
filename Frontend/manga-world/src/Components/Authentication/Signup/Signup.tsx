@@ -14,7 +14,6 @@ function Signup() {
     const inputEmail = e.target.value;
     setEmail(inputEmail);
 
-    // Email validation regex pattern
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(inputEmail)) {
@@ -28,7 +27,6 @@ function Signup() {
     const inputName = e.target.value;
     setName(inputName);
 
-    // Name validation regex pattern
     const namePattern = /^[A-Za-z\d]{3,}$/
 
     if (!namePattern.test(inputName)) {
@@ -42,7 +40,6 @@ function Signup() {
     const inputPassword = e.target.value;
     setPassword(inputPassword);
 
-    // Password validation regex pattern
     const passwordPattern = /^[A-Za-z\d]{4,}$/
     ;
 
@@ -55,12 +52,12 @@ function Signup() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Perform signup logic here
+
   };
 
   return (
     <div className="flex justify-center items-center h-screen background_image_signup">
-      <div className="bg-gray-950 text-white shadow-md rounded px-8 py-8 mb-4">
+      <div className="bg-gray-950 text-white shadow-md rounded-xl px-8 py-8 mb-4">
         <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-6">

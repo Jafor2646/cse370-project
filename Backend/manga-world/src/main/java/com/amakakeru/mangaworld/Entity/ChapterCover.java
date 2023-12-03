@@ -19,7 +19,7 @@ public class ChapterCover implements Serializable {
     @Column(name = "cc_picture", nullable = false)
     private byte[] ccPicture;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "c_id", nullable = false, unique = true)
     private Chapter chapter;
 }

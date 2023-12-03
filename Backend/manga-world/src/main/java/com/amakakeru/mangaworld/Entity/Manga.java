@@ -1,5 +1,6 @@
 package com.amakakeru.mangaworld.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -31,30 +32,39 @@ public class Manga implements Serializable {
     @Column(name = "m_description", nullable = false, length = 5120)
     private String mDescription;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private MangaPicture mangaPicture;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Volume> volumes;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Rate> rates;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AlreadyRead> alreadyReadList;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Wishlist> wishlist;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Ongoing> ongoingList;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CategoryManga> categoryMangas;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AuthorManga> authorMangas;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PublisherManga> publisherMangas;
 }

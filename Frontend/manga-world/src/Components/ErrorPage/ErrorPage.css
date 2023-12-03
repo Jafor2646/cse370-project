@@ -5,8 +5,8 @@
     overflow-y: scroll;
 }
 
-.background_image_home {
-    background-image: url("./../../Assets/Images/Backgrounds/home-page-bg.jpg");
+.background_image_error_page {
+    background-image: url("./../../Assets/Images/Backgrounds/error-page-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

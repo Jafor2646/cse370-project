@@ -1,5 +1,6 @@
 package com.amakakeru.mangaworld.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -28,13 +29,15 @@ public class Volume implements Serializable {
     @Column(name = "v_view", nullable = false, columnDefinition = "int default 0")
     private int vView;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "m_id", nullable = false)
     private Manga manga;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "volume", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Chapter> chapters;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "volume", cascade = CascadeType.ALL, orphanRemoval = true)
     private VolumeCover volumeCover;
 }

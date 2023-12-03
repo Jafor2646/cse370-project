@@ -19,7 +19,7 @@ public class PublisherPicture implements Serializable {
     @Column(name = "pp_picture", nullable = false)
     private byte[] ppPicture;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "p_id", nullable = false, unique = true)
     private Publisher publisher;
 }

@@ -19,7 +19,7 @@ public class ProfilePicture implements Serializable {
     @Column(name = "picture", nullable = false)
     private byte[] picture;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "user_id", unique = true)
     private User user;
 }

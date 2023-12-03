@@ -19,7 +19,7 @@ public class AuthorPicture implements Serializable {
     @Column(name = "ap_picture", nullable = false)
     private byte[] apPicture;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "a_id", nullable = false, unique = true)
     private Author author;
 }
