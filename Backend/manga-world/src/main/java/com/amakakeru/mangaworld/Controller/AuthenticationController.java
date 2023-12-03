@@ -1,6 +1,8 @@
 package com.amakakeru.mangaworld.Controller;
 
+import com.amakakeru.mangaworld.Entity.Authorities;
 import com.amakakeru.mangaworld.Entity.User;
+import com.amakakeru.mangaworld.Repository.AuthoritiesRepository;
 import com.amakakeru.mangaworld.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
-import java.util.Optional;
-
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class AuthenticationController {
@@ -20,19 +20,22 @@ public class AuthenticationController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private AuthoritiesRepository authoritiesRepository;
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
-        Optional<User> optionalUser = userRepository.findByEmail(user.getEmail());
-
-        if (optionalUser.isPresent()) {
-            User storedUser = optionalUser.get();
-
+        if (userRepository.existsByEmail(user.getEmail())) {
+            User storedUser = userRepository.findUserByEmail(user.getEmail());
             if (BCrypt.checkpw(user.getPassword(), storedUser.getPassword())) {
+                storedUser.setPassword(null);
+                System.out.println("hey");
                 return ResponseEntity.ok(storedUser);
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Wrong Credential");
             }
-        } else {
+        }
+        else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }
@@ -46,8 +49,16 @@ public class AuthenticationController {
         String hashedPassword = hashPassword(newUser.getPassword());
         newUser.setPassword(hashedPassword);
 
+//        insert into user (email,name,password) values (newUser.getEmail(),newUser.getName(),newUser.getPassword())
         User savedUser = userRepository.save(newUser);
 
+        Authorities authorities = new Authorities();
+        authorities.setType("general");
+        authorities.setUser(savedUser);
+//        insert into authorities (type,user_id) values (authorities.getType(),authorities.getUser().getUserId())
+        authoritiesRepository.save(authorities);
+
+        savedUser.setPassword(null);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
     }
 
