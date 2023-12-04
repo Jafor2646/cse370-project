@@ -1,6 +1,6 @@
 import Manga from "./Manga";
 
-class Volume {
+class volume {
     vId: number;
     vNumber: number;
     vTitle: string;
@@ -17,4 +17,4 @@ class Volume {
         this.manga = manga;
     } 
 }
-export default Volume;
+export default volume;

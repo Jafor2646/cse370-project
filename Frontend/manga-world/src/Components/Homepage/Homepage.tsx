@@ -2,7 +2,7 @@ import "./Homepage.css";
 import {useContext, useEffect, useState} from "react";
 import {Auth} from "../../Auth/Auth";
 import {useNavigate} from "react-router-dom";
-import Category from "../../Model/Category";
+import Category from "../../Model/category";
 import CategoryController from "../../Controller/CategoryController";
 
 function Homepage() {

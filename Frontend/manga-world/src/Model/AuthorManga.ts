@@ -1,13 +1,13 @@
-import Author from "./Author";
-import Manga from "./Manga";
+import author from "./Author";
+import manga from "./Manga";
 
-class AuthorManga {
+class authorManga {
     aid: number;
     mid: number;
-    author: Author;
-    manga: Manga;
+    author: author;
+    manga: manga;
 
-    constructor(aid: number, mid: number, author: Author, manga: Manga) {
+    constructor(aid: number, mid: number, author: author, manga: manga) {
         this.aid = aid;
         this.mid = mid;
         this.author = author;
@@ -15,4 +15,4 @@ class AuthorManga {
     }
 }
 
-export default AuthorManga;
+export default authorManga;

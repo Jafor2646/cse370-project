@@ -1,15 +1,15 @@
-import Chapter from "./Chapter";
+import chapter from "./Chapter";
 
-class ChapterCover {
+class chapterCover {
   ccId: number;
   ccPicture: string;
-  chapter: Chapter;
+  chapter: chapter;
 
-  constructor(ccId: number, ccPicture: string, chapter: Chapter) {
+  constructor(ccId: number, ccPicture: string, chapter: chapter) {
     this.ccId = ccId;
     this.ccPicture = ccPicture;
     this.chapter = chapter;
   }
 }
 
-export default ChapterCover;
+export default chapterCover;

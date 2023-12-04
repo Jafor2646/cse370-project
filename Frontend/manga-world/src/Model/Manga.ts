@@ -1,4 +1,4 @@
-class Manga {
+class manga {
   mId: number;
   mTitle: string;
   mPublishDate: Date;
@@ -13,4 +13,4 @@ class Manga {
       this.mDescription = mDescription;
   }
 }
-export default Manga;
+export default manga;

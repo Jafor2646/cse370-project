@@ -1,6 +1,6 @@
-import User from "./User";
+import User from "./user";
 
-class ProfilePicture {
+class profilePicture {
     pictureId: number;
     picture: string;
     user: User;
@@ -12,4 +12,4 @@ class ProfilePicture {
     }
 }
 
-export default ProfilePicture;  
+export default profilePicture;  

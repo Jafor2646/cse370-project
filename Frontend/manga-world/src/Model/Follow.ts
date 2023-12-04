@@ -1,7 +1,7 @@
 import Author from "./Author";
-import User from "./User";
+import User from "./user";
 
-class Follow {
+class follow {
   userId: number;
   aId: number;
   user: User;
@@ -15,4 +15,4 @@ class Follow {
   }
 }
 
-export default Follow;
+export default follow;

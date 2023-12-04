@@ -1,6 +1,6 @@
 import Chapter from "./Chapter";
 
-class MangaFile {
+class mangaFile {
     mfId: number;
     mfFile: string;
     chapter: Chapter;
@@ -12,4 +12,4 @@ class MangaFile {
     }
 }
 
-export default MangaFile;
+export default mangaFile;

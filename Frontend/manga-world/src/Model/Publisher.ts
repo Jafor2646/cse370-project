@@ -1,4 +1,4 @@
-class Publisher {
+class publisher {
     pId: number;
     pName: string;
     pWebsite: string;
@@ -12,4 +12,4 @@ class Publisher {
     }
 }
 
-export default Publisher;
+export default publisher;

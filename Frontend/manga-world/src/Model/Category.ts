@@ -1,4 +1,4 @@
-class Category {
+class category {
     cid: number;
     cname: string;
 
@@ -8,4 +8,4 @@ class Category {
     }
 }
 
-export default Category;
+export default category;

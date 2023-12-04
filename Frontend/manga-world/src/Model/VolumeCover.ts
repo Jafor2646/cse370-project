@@ -1,6 +1,6 @@
 import Volume from "./Volume";
 
-class VolumeCover {
+class volumeCover {
   vcId: number;
   vcPicture: string;
   volume: Volume;
@@ -11,4 +11,4 @@ class VolumeCover {
     this.volume = volume;
   }
 }
-export default VolumeCover; 
+export default volumeCover; 

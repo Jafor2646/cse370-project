@@ -1,14 +1,14 @@
-import Volume from "./Volume";
+import volume from "./Volume";
 
-class Chapter {
+class chapter {
   cId: number;
   cNumber: number;
   cReleaseDate: Date;
   cPageCount: number;
   cView: number;
-  volume: Volume;
+  volume: volume;
   
-  constructor(cId: number, cNumber: number, cReleaseDate: Date, cPageCount: number, cView: number, volume: Volume) {  
+  constructor(cId: number, cNumber: number, cReleaseDate: Date, cPageCount: number, cView: number, volume: volume) {  
     this.cId = cId;
     this.cNumber = cNumber;
     this.cReleaseDate = cReleaseDate;
@@ -19,4 +19,4 @@ class Chapter {
   
 }
 
-export default Chapter;
+export default chapter;

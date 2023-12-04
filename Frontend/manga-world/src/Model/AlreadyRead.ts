@@ -1,14 +1,14 @@
-import Manga from "./Manga";
-import User from "./User";
+import manga from "./Manga";
+import user from "./user";
 
-class AlreadyRead {
+class alreadyRead {
     userid: number;
     mid: number;
     addeddate: Date;
-    user: User;
-    manga: Manga;
+    user: user;
+    manga: manga;
 
-    constructor(userid: number, mid: number, addeddate: Date, user: User, manga: Manga) {
+    constructor(userid: number, mid: number, addeddate: Date, user: user, manga: manga) {
         this.userid = userid;
         this.mid = mid;
         this.addeddate = addeddate;
@@ -17,4 +17,4 @@ class AlreadyRead {
     }
 }
 
-export default AlreadyRead;
+export default alreadyRead;

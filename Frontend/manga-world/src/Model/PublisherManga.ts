@@ -1,7 +1,7 @@
 import Manga from "./Manga";
 import Publisher from "./Publisher";
 
-class PublisherManga {
+class publisherManga {
     pId: number;
     mId: number;
     publisher: Publisher;
@@ -15,4 +15,4 @@ class PublisherManga {
     }
 }
 
-export default PublisherManga;
+export default publisherManga;

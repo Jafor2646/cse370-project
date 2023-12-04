@@ -1,6 +1,6 @@
 import Publisher from "./Publisher";
 
-class PublisherPicture {
+class publisherPicture {
     ppId: number;
     ppPicture: string;
     publisher: Publisher;
@@ -12,4 +12,4 @@ class PublisherPicture {
     }
 }
 
-export default PublisherPicture;
+export default publisherPicture;

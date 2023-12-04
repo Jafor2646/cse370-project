@@ -1,7 +1,7 @@
 import Manga from "./Manga";
-import User from "./User";
+import User from "./user";
 
-class WishList {
+class wishList {
     userId: number;
     mId: number;
     addedDate: Date;
@@ -17,4 +17,4 @@ class WishList {
     }
 }
 
-export default WishList; 
+export default wishList; 

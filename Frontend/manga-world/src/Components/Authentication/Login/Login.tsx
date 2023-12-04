@@ -3,9 +3,9 @@ import "./Login.css";
 import {Link, useNavigate} from "react-router-dom";
 import {Auth} from "../../../Auth/Auth";
 import AuthenticationController from "../../../Controller/AuthenticationController";
-import User from "../../../Model/User";
+import User from "../../../Model/user";
 import AuthoritiesController from "../../../Controller/AuthoritiesController";
-import Authorities from "../../../Model/Authorities";
+import Authorities from "../../../Model/authorities";
 
 function Login() {
     const [email, setEmail] = useState<string>("");

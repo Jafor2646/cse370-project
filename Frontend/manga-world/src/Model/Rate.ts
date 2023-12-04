@@ -1,7 +1,7 @@
 import Manga from "./Manga";
-import User from "./User";
+import User from "./user";
 
-class Rate {
+class rate {
     rId: number;
     rValue: number;
     rDate: Date;
@@ -23,4 +23,4 @@ class Rate {
     }
 }
 
-export default Rate;
+export default rate;

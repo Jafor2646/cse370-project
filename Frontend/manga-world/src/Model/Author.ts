@@ -1,4 +1,4 @@
-class Author {
+class author {
     aid: number;
     aname: string;
     awebsite: string;
@@ -12,4 +12,4 @@ class Author {
     }
 }
 
-export default Author;
+export default author;

@@ -1,9 +1,9 @@
 import Chapter from "./Chapter";
 import Manga from "./Manga";
-import User from "./User";
+import User from "./user";
 import Volume from "./Volume";
 
-class Ongoing {
+class ongoing {
     userId: number;
     mId: number;
     currentVolume: number;
@@ -25,4 +25,4 @@ class Ongoing {
     }
 }
 
-export default Ongoing;
+export default ongoing;
