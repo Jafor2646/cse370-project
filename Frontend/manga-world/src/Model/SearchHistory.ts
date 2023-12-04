@@ -1,6 +1,6 @@
-import User from "./user";
+import User from "./User";
 
-class searchHistory {
+class SearchHistory {
     shId: number;
     shDate: Date;
     shSearch: string;
@@ -16,4 +16,4 @@ class searchHistory {
     }
 }
 
-export default searchHistory;
+export default SearchHistory;

@@ -1,18 +1,18 @@
 import Manga from "./Manga";
 import Publisher from "./Publisher";
 
-class publisherManga {
-    pId: number;
-    mId: number;
+class PublisherManga {
+    pid: number;
+    mid: number;
     publisher: Publisher;
     manga: Manga;
 
-    constructor(pId: number, mId: number, publisher: Publisher, manga: Manga) {
-        this.pId = pId;
-        this.mId = mId;
+    constructor(pid: number, mid: number, publisher: Publisher, manga: Manga) {
+        this.pid = pid;
+        this.mid = mid;
         this.publisher = publisher;
         this.manga = manga;
     }
 }
 
-export default publisherManga;
+export default PublisherManga;

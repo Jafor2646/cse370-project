@@ -1,13 +1,13 @@
-import category from "./category";
-import manga from "./Manga";
+import Manga from "./Manga";
+import Category from "./Category";
 
-class categoryManga {
+class CategoryManga {
     cid: number;
     mid: number;
-    category: category;
-    manga: manga;
+    category: Category;
+    manga: Manga;
 
-    constructor(cid: number, mid: number, category: category, manga: manga) {
+    constructor(cid: number, mid: number, category: Category, manga: Manga) {
         this.cid = cid;
         this.mid = mid;
         this.category = category;
@@ -15,4 +15,4 @@ class categoryManga {
     }
 }
 
-export default categoryManga;
+export default CategoryManga;

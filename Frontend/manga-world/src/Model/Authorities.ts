@@ -1,15 +1,15 @@
-import user from "./user";
+import User from "./User";
 
-class authorities {
-    authid: number;
+class Authorities {
+    authId: number;
     type: string;
-    user: user;
+    user: User;
 
-    constructor(authid: number, type: string, user: user) {
-        this.authid = authid;
+    constructor(authId: number, type: string, user: User) {
+        this.authId = authId;
         this.type = type;
         this.user = user;
     }
 }
 
-export default authorities;
+export default Authorities;

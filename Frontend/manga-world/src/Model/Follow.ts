@@ -1,18 +1,18 @@
 import Author from "./Author";
-import User from "./user";
+import User from "./User";
 
-class follow {
+class Follow {
   userId: number;
-  aId: number;
+  aid: number;
   user: User;
   author: Author;
 
-  constructor(userId: number, aId: number, user: User, author: Author) {
+  constructor(userId: number, aid: number, user: User, author: Author) {
     this.userId = userId;
-    this.aId = aId;
+    this.aid = aid;
     this.user = user;
     this.author = author;
   }
 }
 
-export default follow;
+export default Follow;

@@ -1,26 +1,26 @@
 import Manga from "./Manga";
-import User from "./user";
+import User from "./User";
 
-class rate {
-    rId: number;
-    rValue: number;
-    rDate: Date;
-    rComment: string;
+class Rate {
+    rid: number;
+    rvalue: number;
+    rdate: Date;
+    rcomment: string;
     userId: number;
-    mId: number;
+    mid: number;
     user: User;
     manga: Manga;
     
-    constructor(rId: number, rValue: number, rDate: Date, rComment: string, userId: number, mId: number, user: User, manga: Manga) {
-        this.rId = rId;
-        this.rValue = rValue;
-        this.rDate = rDate;
-        this.rComment = rComment;
+    constructor(rid: number, rvalue: number, rdate: Date, rcomment: string, userId: number, mid: number, user: User, manga: Manga) {
+        this.rid = rid;
+        this.rvalue = rvalue;
+        this.rdate = rdate;
+        this.rcomment = rcomment;
         this.userId = userId;
-        this.mId = mId;
+        this.mid = mid;
         this.user = user;
         this.manga = manga;
     }
 }
 
-export default rate;
+export default Rate;

@@ -1,22 +1,23 @@
-import volume from "./Volume";
+import Volume from "./Volume";
 
-class chapter {
-  cId: number;
-  cNumber: number;
-  cReleaseDate: Date;
-  cPageCount: number;
-  cView: number;
-  volume: volume;
+
+class Chapter {
+  cid: number;
+  cnumber: number;
+  creleaseDate: Date;
+  cpageCount: number;
+  cview: number;
+  volume: Volume;
   
-  constructor(cId: number, cNumber: number, cReleaseDate: Date, cPageCount: number, cView: number, volume: volume) {  
-    this.cId = cId;
-    this.cNumber = cNumber;
-    this.cReleaseDate = cReleaseDate;
-    this.cPageCount = cPageCount;
-    this.cView = cView;
-    this.volume = volume;
-  }
+    constructor(cid: number, cnumber: number, creleaseDate: Date, cpageCount: number, cview: number, volume: Volume) {
+        this.cid = cid;
+        this.cnumber = cnumber;
+        this.creleaseDate = creleaseDate;
+        this.cpageCount = cpageCount;
+        this.cview = cview;
+        this.volume = volume;
+    }
   
 }
 
-export default chapter;
+export default Chapter;

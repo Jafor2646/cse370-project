@@ -1,20 +1,20 @@
 import Manga from "./Manga";
 
-class volume {
-    vId: number;
-    vNumber: number;
-    vTitle: string;
-    vReleaseDate: Date;
-    vViews: number;
+class Volume {
+    vid: number;
+    vnumber: number;
+    vtitle: string;
+    vreleaseDate: Date;
+    vviews: number;
     manga: Manga;
 
-    constructor(vId: number, vNumber: number, vTitle: string, vReleaseDate: Date, vViews: number, manga: Manga) {
-        this.vId = vId;
-        this.vNumber = vNumber;
-        this.vTitle = vTitle;
-        this.vReleaseDate = vReleaseDate;
-        this.vViews = vViews;
+    constructor(vid: number, vnumber: number, vtitle: string, vreleaseDate: Date, vviews: number, manga: Manga) {
+        this.vid = vid;
+        this.vnumber = vnumber;
+        this.vtitle = vtitle;
+        this.vreleaseDate = vreleaseDate;
+        this.vviews = vviews;
         this.manga = manga;
-    } 
+    }
 }
-export default volume;
+export default Volume;

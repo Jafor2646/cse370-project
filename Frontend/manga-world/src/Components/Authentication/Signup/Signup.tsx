@@ -3,9 +3,9 @@ import "./Signup.css";
 import {Link, useNavigate} from "react-router-dom";
 import {Auth} from "../../../Auth/Auth";
 import AuthenticationController from "../../../Controller/AuthenticationController";
-import User from "../../../Model/user";
 import AuthoritiesController from "../../../Controller/AuthoritiesController";
-import Authorities from "../../../Model/authorities";
+import User from "../../../Model/User";
+import Authorities from "../../../Model/Authorities";
 
 function Signup() {
     const [email, setEmail] = useState("");

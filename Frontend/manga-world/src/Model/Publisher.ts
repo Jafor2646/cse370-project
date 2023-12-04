@@ -1,15 +1,15 @@
-class publisher {
-    pId: number;
-    pName: string;
-    pWebsite: string;
-    pDescription: string;
+class Publisher {
+    pid: number;
+    pname: string;
+    pwebsite: string;
+    pdescription: string;
 
-    constructor(pId: number, pName: string, pWebsite: string, pDescription: string) {
-        this.pId = pId;
-        this.pName = pName;
-        this.pWebsite = pWebsite;
-        this.pDescription = pDescription;
+    constructor(pid: number, pname: string, pwebsite: string, pdescription: string) {
+        this.pid = pid;
+        this.pname = pname;
+        this.pwebsite = pwebsite;
+        this.pdescription = pdescription;
     }
 }
 
-export default publisher;
+export default Publisher;

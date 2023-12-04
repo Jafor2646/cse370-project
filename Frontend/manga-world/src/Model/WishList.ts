@@ -1,20 +1,20 @@
 import Manga from "./Manga";
-import User from "./user";
+import User from "./User";
 
-class wishList {
+class WishList {
     userId: number;
-    mId: number;
+    mid: number;
     addedDate: Date;
     user: User;
     manga: Manga;
 
-    constructor(userId: number, mId: number, addedDate: Date, user: User, manga: Manga) { 
+    constructor(userId: number, mid: number, addedDate: Date, user: User, manga: Manga) {
         this.userId = userId;
-        this.mId = mId;
+        this.mid = mid;
         this.addedDate = addedDate;
         this.user = user;
         this.manga = manga;
     }
 }
 
-export default wishList; 
+export default WishList;

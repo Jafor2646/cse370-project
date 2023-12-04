@@ -1,11 +1,11 @@
 import Chapter from "./Chapter";
 import Manga from "./Manga";
-import User from "./user";
 import Volume from "./Volume";
+import User from "./User";
 
-class ongoing {
+class Ongoing {
     userId: number;
-    mId: number;
+    mid: number;
     currentVolume: number;
     currentChapter: number;
     user: User;
@@ -13,9 +13,9 @@ class ongoing {
     volume: Volume;
     chapter: Chapter;
 
-    constructor(userId: number, mId: number, currentVolume: number, currentChapter: number, user: User, manga: Manga, volume: Volume, chapter: Chapter) {
+    constructor(userId: number, mid: number, currentVolume: number, currentChapter: number, user: User, manga: Manga, volume: Volume, chapter: Chapter) {
         this.userId = userId;
-        this.mId = mId;
+        this.mid = mid;
         this.currentVolume = currentVolume;
         this.currentChapter = currentChapter;
         this.user = user;
@@ -25,4 +25,4 @@ class ongoing {
     }
 }
 
-export default ongoing;
+export default Ongoing;

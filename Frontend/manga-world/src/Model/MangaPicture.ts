@@ -1,6 +1,6 @@
 import Manga from "./Manga";
 
-class mangaPicture {
+class MangaPicture {
   mpId: number;
   picture: string;
   manga: Manga;
@@ -12,4 +12,4 @@ class mangaPicture {
   }
 }
 
-export default mangaPicture;
+export default MangaPicture;

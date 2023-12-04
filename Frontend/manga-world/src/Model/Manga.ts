@@ -1,16 +1,16 @@
-class manga {
-  mId: number;
-  mTitle: string;
-  mPublishDate: Date;
-  mView: number;
-  mDescription: string;
+class Manga {
+  mid: number;
+  mtitle: string;
+  mpublishDate: Date;
+  mview: number;
+  mdescription: string;
 
-  constructor(mId: number, mTitle: string, mPublishDate: Date, mView: number, mDescription: string) {
-      this.mId = mId;
-      this.mTitle = mTitle;
-      this.mPublishDate = mPublishDate;
-      this.mView = mView;
-      this.mDescription = mDescription;
-  }
+    constructor(mid: number, mtitle: string, mpublishDate: Date, mview: number, mdescription: string) {
+        this.mid = mid;
+        this.mtitle = mtitle;
+        this.mpublishDate = mpublishDate;
+        this.mview = mview;
+        this.mdescription = mdescription;
+    }
 }
-export default manga;
+export default Manga;

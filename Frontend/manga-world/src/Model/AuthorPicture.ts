@@ -1,15 +1,15 @@
-import author from "./Author";
+import Author from "./Author";
 
-class authorPicture {
-    apid: number;
-    appicture: string;
-    author: author;
+class AuthorPicture {
+    apId: number;
+    apPicture: string;
+    author: Author;
 
-    constructor(apid: number, appicture: string, author: author) {
-        this.apid = apid;
-        this.appicture = appicture;
+    constructor(apId: number, apPicture: string, author: Author) {
+        this.apId = apId;
+        this.apPicture = apPicture;
         this.author = author;
     }
 }
 
-export default authorPicture;
+export default AuthorPicture;
