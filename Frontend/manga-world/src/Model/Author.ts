@@ -1,14 +1,14 @@
 class Author {
-    aId: number;
-    aName: string;
-    aWebsite: string;
-    aDescription: string;
+    aid: number;
+    aname: string;
+    awebsite: string;
+    adescription: string;
 
-    constructor(aId: number, aName: string, aWebsite: string, aDescription: string) {
-        this.aId = aId;
-        this.aName = aName;
-        this.aWebsite = aWebsite;
-        this.aDescription = aDescription;
+    constructor(aid: number, aname: string, awebsite: string, adescription: string) {
+        this.aid = aid;
+        this.aname = aname;
+        this.awebsite = awebsite;
+        this.adescription = adescription;
     }
 }
 

@@ -4,13 +4,11 @@ import com.amakakeru.mangaworld.Entity.IdClasses.WishlistId;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Entity
 @IdClass(WishlistId.class)
 @Table(name = "wishlist")
-public class Wishlist implements Serializable {
+public class Wishlist {
 
     @Id
     @Column(name = "user_id")

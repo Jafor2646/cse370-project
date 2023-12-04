@@ -4,13 +4,11 @@ import com.amakakeru.mangaworld.Entity.IdClasses.CategoryMangaId;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Entity
 @IdClass(CategoryMangaId.class)
 @Table(name = "category_manga")
-public class CategoryManga implements Serializable {
+public class CategoryManga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

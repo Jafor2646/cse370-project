@@ -15,14 +15,4 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
-
-    @GetMapping("/users/getAll")
-    public List<User> getAll(){
-        return userRepository.findAll();
-    }
-
-    @GetMapping("/users/{userId}")
-    public Optional<User> getUser(@PathVariable String userId){
-        return userRepository.findById(Long.parseLong(userId));
-    }
 }

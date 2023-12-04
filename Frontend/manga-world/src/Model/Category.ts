@@ -1,10 +1,10 @@
 class Category {
-    cId: number;
-    cName: string;
+    cid: number;
+    cname: string;
 
-    constructor(cId: number, cName: string) {
-        this.cId = cId;
-        this.cName = cName;
+    constructor(cid: number, cname: string) {
+        this.cid = cid;
+        this.cname = cname;
     }
 }
 

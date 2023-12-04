@@ -3,12 +3,10 @@ package com.amakakeru.mangaworld.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Entity
 @Table(name = "publisher_picture")
-public class PublisherPicture implements Serializable {
+public class PublisherPicture {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

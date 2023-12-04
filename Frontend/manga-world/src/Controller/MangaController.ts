@@ -4,6 +4,10 @@ const USER_API_BASE_URL = "http://localhost:8080/";
 
 class MangaController {
 
+    getAllMangaNames() {
+        return axios.get(USER_API_BASE_URL + "mangas/getAllMangaNames");
+    }
+
 }
 
 export default new MangaController();

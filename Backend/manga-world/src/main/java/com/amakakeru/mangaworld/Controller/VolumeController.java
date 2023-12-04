@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 public class VolumeController {
     @Autowired
-    VolumeRepository volumeRepository;
+    private VolumeRepository volumeRepository;
 
     @GetMapping("/volumes/getAllVolume")
     List<Volume> getAllVolume(){return volumeRepository.findAll();}

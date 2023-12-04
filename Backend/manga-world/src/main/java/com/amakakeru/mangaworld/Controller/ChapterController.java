@@ -17,7 +17,7 @@ import java.util.Optional;
 public class ChapterController {
 
     @Autowired
-    ChapterRepository chapterRepository;
+    private ChapterRepository chapterRepository;
 
     @GetMapping("/chapters/getAllChapter")
     public List<Chapter> getAllChapter(){

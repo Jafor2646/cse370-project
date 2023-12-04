@@ -4,13 +4,11 @@ import com.amakakeru.mangaworld.Entity.IdClasses.AlreadyReadId;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Entity
 @IdClass(AlreadyReadId.class)
 @Table(name = "already_read")
-public class AlreadyRead implements Serializable {
+public class AlreadyRead {
 
     @Id
     @Column(name = "user_id")

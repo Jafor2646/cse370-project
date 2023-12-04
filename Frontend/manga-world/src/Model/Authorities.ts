@@ -1,12 +1,12 @@
 import User from "./User";
 
-class Authorities{
-    authId: number;
+class Authorities {
+    authid: number;
     type: string;
     user: User;
 
-    constructor(authId: number, type: string, user: User) {
-        this.authId = authId;
+    constructor(authid: number, type: string, user: User) {
+        this.authid = authid;
         this.type = type;
         this.user = user;
     }
