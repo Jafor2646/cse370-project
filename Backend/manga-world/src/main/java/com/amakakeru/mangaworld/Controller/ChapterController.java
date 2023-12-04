@@ -24,7 +24,7 @@ public class ChapterController {
         return chapterRepository.findAll();
     }
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/chapters/{cId}")
     public Optional<Chapter> getUser(@PathVariable String cId){
         return chapterRepository.findById(Long.parseLong(cId));
     }
