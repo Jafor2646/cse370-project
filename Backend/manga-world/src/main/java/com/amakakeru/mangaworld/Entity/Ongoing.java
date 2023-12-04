@@ -4,13 +4,11 @@ import com.amakakeru.mangaworld.Entity.IdClasses.OngoingId;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Entity
 @IdClass(OngoingId.class)
 @Table(name = "ongoing")
-public class Ongoing implements Serializable {
+public class Ongoing {
 
     @Id
     @Column(name = "user_id")

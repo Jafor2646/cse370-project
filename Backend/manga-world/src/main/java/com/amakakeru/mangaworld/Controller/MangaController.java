@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +18,17 @@ import java.util.Optional;
 public class MangaController {
 
     @Autowired
-    MangaRepository mangaRepository;
+    private MangaRepository mangaRepository;
+
+    @GetMapping("/mangas/getAllMangaNames")
+    public List<String> getAllMangaNames(){
+        List<Manga> mangas = mangaRepository.getMangasForPlaceholder();
+        List<String> mangaNames = new ArrayList<>();
+        for(Manga manga : mangas){
+            mangaNames.add(manga.getMTitle());
+        }
+        return mangaNames;
+    }
 
     @GetMapping("/mangas/getAllManga")
     public List<Manga> getAllManga(){

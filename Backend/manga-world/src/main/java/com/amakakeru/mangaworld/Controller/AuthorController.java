@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 public class AuthorController {
     @Autowired
-    AuthorRepository authorRepository;
+    private AuthorRepository authorRepository;
 
     @GetMapping("/authors/getAllAuthors")
     public List<Author> getAllAuthors(){return authorRepository.findAll();}

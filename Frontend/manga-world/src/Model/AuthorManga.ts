@@ -2,14 +2,14 @@ import Author from "./Author";
 import Manga from "./Manga";
 
 class AuthorManga {
-    aId: number;
-    mId: number;
+    aid: number;
+    mid: number;
     author: Author;
     manga: Manga;
 
-    constructor(aId: number, mId: number, author: Author, manga: Manga) {
-        this.aId = aId;
-        this.mId = mId;
+    constructor(aid: number, mid: number, author: Author, manga: Manga) {
+        this.aid = aid;
+        this.mid = mid;
         this.author = author;
         this.manga = manga;
     }

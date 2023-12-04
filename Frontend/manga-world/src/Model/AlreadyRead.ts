@@ -2,16 +2,16 @@ import Manga from "./Manga";
 import User from "./User";
 
 class AlreadyRead {
-    userId: number;
-    mId: number;
-    addedDate: Date;
+    userid: number;
+    mid: number;
+    addeddate: Date;
     user: User;
     manga: Manga;
 
-    constructor(userId: number, mId: number, addedDate: Date, user: User, manga: Manga) {
-        this.userId = userId;
-        this.mId = mId;
-        this.addedDate = addedDate;
+    constructor(userid: number, mid: number, addeddate: Date, user: User, manga: Manga) {
+        this.userid = userid;
+        this.mid = mid;
+        this.addeddate = addeddate;
         this.user = user;
         this.manga = manga;
     }

@@ -3,13 +3,11 @@ package com.amakakeru.mangaworld.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 
 @Data
 @Entity
 @Table(name = "volume_cover")
-public class VolumeCover implements Serializable {
+public class VolumeCover {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

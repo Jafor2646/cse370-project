@@ -1,13 +1,13 @@
 import Author from "./Author";
 
 class AuthorPicture {
-    apId: number;
-    apPicture: string;
+    apid: number;
+    appicture: string;
     author: Author;
 
-    constructor(apId: number, apPicture: string, author: Author) {      
-        this.apId = apId;
-        this.apPicture = apPicture;
+    constructor(apid: number, appicture: string, author: Author) {
+        this.apid = apid;
+        this.appicture = appicture;
         this.author = author;
     }
 }

@@ -3,12 +3,10 @@ package com.amakakeru.mangaworld.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Entity
 @Table(name = "authorities")
-public class Authorities implements Serializable {
+public class Authorities {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

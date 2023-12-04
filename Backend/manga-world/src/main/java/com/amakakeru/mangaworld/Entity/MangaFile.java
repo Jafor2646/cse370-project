@@ -3,12 +3,10 @@ package com.amakakeru.mangaworld.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Entity
 @Table(name = "manga_file")
-public class MangaFile implements Serializable {
+public class MangaFile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

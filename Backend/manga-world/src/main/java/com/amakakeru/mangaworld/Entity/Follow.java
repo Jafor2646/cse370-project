@@ -4,13 +4,11 @@ import com.amakakeru.mangaworld.Entity.IdClasses.FollowId;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Entity
 @IdClass(FollowId.class)
 @Table(name = "follow")
-public class Follow implements Serializable {
+public class Follow {
 
     @Id
     @Column(name = "user_id")
