@@ -8,6 +8,9 @@ import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {Auth} from "./Auth/Auth";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
+import CategoryViewer from "./Components/CategoryViewer/CategoryViewer";
+import MangaViewer from "./Components/MangaViewer/MangaViewer";
+import AuthorViewer from "./Components/AuthorViewer/AuthorViewer";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +21,10 @@ const router = createBrowserRouter([
       { path: "/home", element: <Homepage/> },
       { path: "/login", element: <Login/> },
       { path: "/signup", element: <Signup/> },
-      { path: "*", element: <ErrorPage/> }
+      { path: "*", element: <ErrorPage/> },
+      { path: "/category", element: <CategoryViewer/> },
+      { path: "/manga", element: <MangaViewer/> },
+      { path: "/author", element: <AuthorViewer/> },
     ],
   },
 ]);

@@ -13,9 +13,8 @@ public class AuthorPicture {
     @Column(name = "ap_id")
     private Long apId;
 
-    @Lob
     @Column(name = "ap_picture", nullable = false)
-    private byte[] apPicture;
+    private String apPicture;
 
     @OneToOne
     @JoinColumn(name = "a_id", nullable = false, unique = true)

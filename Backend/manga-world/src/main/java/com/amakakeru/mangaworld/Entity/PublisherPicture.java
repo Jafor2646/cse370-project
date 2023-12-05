@@ -13,9 +13,8 @@ public class PublisherPicture {
     @Column(name = "pp_id")
     private Long ppId;
 
-    @Lob
     @Column(name = "pp_picture", nullable = false)
-    private byte[] ppPicture;
+    private String ppPicture;
 
     @OneToOne
     @JoinColumn(name = "p_id", nullable = false, unique = true)

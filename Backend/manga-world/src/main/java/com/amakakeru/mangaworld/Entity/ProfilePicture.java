@@ -13,9 +13,8 @@ public class ProfilePicture {
     @Column(name = "picture_id")
     private Long pictureId;
 
-    @Lob
     @Column(name = "picture", nullable = false)
-    private byte[] picture;
+    private String picture;
 
     @OneToOne
     @JoinColumn(name = "user_id", unique = true)

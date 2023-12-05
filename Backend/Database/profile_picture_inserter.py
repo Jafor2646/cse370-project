@@ -16,7 +16,8 @@ conn = mysql.connector.connect(
 
 def get_base64_encoded_image(image_path):
     with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode('utf-8')
+        value = base64.b64encode(img_file.read()).decode('utf-8')
+        return f'data:image/jpg;base64,{value}'
 
 
 folder_dir = "./sample_data/Sample_Image/"

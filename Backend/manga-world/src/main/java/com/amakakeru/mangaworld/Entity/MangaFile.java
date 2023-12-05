@@ -13,9 +13,8 @@ public class MangaFile {
     @Column(name = "mf_id")
     private Long mfId;
 
-    @Lob
     @Column(name = "mf_file", nullable = false)
-    private byte[] mfFile;
+    private String mfFile;
 
     @OneToOne
     @JoinColumn(name = "c_id", nullable = false)

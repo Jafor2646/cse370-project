@@ -14,9 +14,8 @@ public class VolumeCover {
     @Column(name = "vc_id")
     private Long vcId;
 
-    @Lob
     @Column(name = "vc_picture", nullable = false)
-    private byte[] vcPicture;
+    private String vcPicture;
 
     @OneToOne
     @JoinColumn(name = "v_id", nullable = false, unique = true)

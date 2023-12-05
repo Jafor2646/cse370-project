@@ -13,9 +13,8 @@ public class ChapterCover {
     @Column(name = "cc_id")
     private Long ccId;
 
-    @Lob
     @Column(name = "cc_picture", nullable = false)
-    private byte[] ccPicture;
+    private String ccPicture;
 
     @OneToOne
     @JoinColumn(name = "c_id", nullable = false, unique = true)

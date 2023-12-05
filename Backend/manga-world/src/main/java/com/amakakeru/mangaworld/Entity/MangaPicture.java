@@ -13,9 +13,8 @@ public class MangaPicture {
     @Column(name = "mp_id")
     private Long mpId;
 
-    @Lob
     @Column(name = "mp_picture", nullable = false)
-    private byte[] mpPicture;
+    private String mpPicture;
 
     @OneToOne
     @JoinColumn(name = "m_id", nullable = false, unique = true)

@@ -2,14 +2,14 @@ import Manga from "./Manga";
 
 class MangaPicture {
   mpId: number;
-  picture: string;
+  mpPicture: string;
   manga: Manga;
 
-  constructor(mpId: number, picture: string, manga: Manga) {
-    this.mpId = mpId;
-    this.picture = picture;
-    this.manga = manga;
-  }
+    constructor(mpId: number, mpPicture: string, manga: Manga) {
+        this.mpId = mpId;
+        this.mpPicture = mpPicture;
+        this.manga = manga;
+    }
 }
 
 export default MangaPicture;
