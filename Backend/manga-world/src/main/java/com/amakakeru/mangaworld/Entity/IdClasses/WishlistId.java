@@ -9,5 +9,5 @@ import java.io.Serializable;
 @EqualsAndHashCode
 public class WishlistId implements Serializable {
     private Long userId;
-    private Long mId;
+    private Long mid;
 }

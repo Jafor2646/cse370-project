@@ -9,5 +9,5 @@ import java.io.Serializable;
 @EqualsAndHashCode
 public class FollowId implements Serializable {
     private Long userId;
-    private Long aId;
+    private Long aid;
 }

@@ -14,12 +14,20 @@ conn = mysql.connector.connect(
 )
 
 
+def encode_pdf_to_base64(pdf_path):
+    with open(pdf_path, 'rb') as pdf_file:
+        pdf_base64 = base64.b64encode(pdf_file.read())
+
+    return pdf_base64.decode('utf-8')
+
+
 def get_base64_encoded_image(image_path):
     with open(image_path, "rb") as img_file:
         value = base64.b64encode(img_file.read()).decode('utf-8')
         return f'data:image/jpg;base64,{value}'
 
 
+pdf_path = './sample_pdf/hp1.pdf'
 folder_dir = "./sample_data/Sample_Image/"
 cursor = conn.cursor()
 
@@ -157,6 +165,30 @@ for filename in os.listdir(folder_dir):
         cursor.close()
         print(
             f'Uploaded into publisher_picture for Publisher {count} Time Consumed: {datetime.datetime.now() - old_time}')
+        count += 1
+
+
+# section 7
+# Manga File
+count: int = 1
+for filename in os.listdir(folder_dir):
+    if count > 400:
+        break
+    if filename.endswith(".png") or filename.endswith(".jpg") or filename.endswith(".jpeg"):
+        base64_file = encode_pdf_to_base64(pdf_path)
+        base64_file = f'data:application/pdf;base64,{base64_file}'
+        cursor = conn.cursor()
+        data_to_insert = {
+            'mf_file': base64_file,
+            'c_id': count
+        }
+        insert_query = "INSERT INTO manga_file (mf_file, c_id) VALUES (%s, %s)"
+        cursor.execute(
+            insert_query, (data_to_insert['mf_file'], data_to_insert['c_id']))
+        conn.commit()
+        cursor.close()
+        print(
+            f'Uploaded into manga_file for Manga {count} Time Consumed: {datetime.datetime.now() - old_time}')
         count += 1
 
 

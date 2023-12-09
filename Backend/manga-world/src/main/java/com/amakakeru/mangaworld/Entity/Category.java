@@ -9,15 +9,15 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "category")
-public class Category{
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "c_id")
-    private Long cId;
+    private Long cid;
 
     @Column(name = "c_name", nullable = false)
-    private String cName;
+    private String cname;
 
     @JsonIgnore
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)

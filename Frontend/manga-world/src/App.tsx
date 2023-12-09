@@ -11,6 +11,10 @@ import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import CategoryViewer from "./Components/CategoryViewer/CategoryViewer";
 import MangaViewer from "./Components/MangaViewer/MangaViewer";
 import AuthorViewer from "./Components/AuthorViewer/AuthorViewer";
+import PublisherViewer from "./Components/PublisherViewer/PublisherViewer";
+import ChapterViewer from "./Components/ChapterViewer/ChapterViewer";
+import MangaReader from "./Components/MangaReader/MangaReader";
+import AddNewManga from "./Components/AdminView/AddNewManga";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +29,10 @@ const router = createBrowserRouter([
       { path: "/category", element: <CategoryViewer/> },
       { path: "/manga", element: <MangaViewer/> },
       { path: "/author", element: <AuthorViewer/> },
+      { path: "/publisher", element: <PublisherViewer/> },
+      { path: "/chapter", element: <ChapterViewer /> },
+      { path: "/reader", element: <MangaReader /> },
+      { path: "/addNewManga", element: <AddNewManga /> },
     ],
   },
 ]);

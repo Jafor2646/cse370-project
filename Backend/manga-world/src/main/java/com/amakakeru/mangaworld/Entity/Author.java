@@ -14,16 +14,16 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "a_id")
-    private Long aId;
+    private Long aid;
 
     @Column(name = "a_name", nullable = false)
-    private String aName;
+    private String aname;
 
     @Column(name = "a_website", nullable = false)
-    private String aWebsite;
+    private String awebsite;
 
     @Column(name = "a_description", nullable = false, length = 5120)
-    private String aDescription;
+    private String adescription;
 
     @JsonIgnore
     @OneToOne(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)

@@ -3,6 +3,7 @@ package com.amakakeru.mangaworld.Repository;
 import com.amakakeru.mangaworld.Entity.Author;
 import com.amakakeru.mangaworld.Entity.AuthorManga;
 import com.amakakeru.mangaworld.Entity.Manga;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,4 +13,8 @@ import java.util.List;
 public interface AuthorMangaRepository extends JpaRepository<AuthorManga, Long> {
 
     List<AuthorManga> findAllByManga(Manga manga);
+
+    List<AuthorManga> findAllByAuthor(Author author);
+
+    List<AuthorManga> findAuthorMangasByAuthor(Author author, Pageable pageable);
 }

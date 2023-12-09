@@ -8,6 +8,10 @@ class AuthorMangaController {
         return axios.post(USER_API_BASE_URL + "authorMangas/getAuthorMangaByManga", manga);
     }
 
+    addAuthorManga(authorManga: any) {
+        return axios.post(USER_API_BASE_URL + "authorMangas/addAuthorManga", authorManga);
+    }
+
 }
 
 export default new AuthorMangaController();

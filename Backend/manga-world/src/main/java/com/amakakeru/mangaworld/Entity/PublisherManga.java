@@ -11,14 +11,14 @@ import lombok.Data;
 public class PublisherManga {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "p_id")
-    private Long pId;
+    private Long pid;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "m_id")
-    private Long mId;
+    private Long mid;
 
     @ManyToOne
     @JoinColumn(name = "p_id", insertable = false, updatable = false)

@@ -9,6 +9,6 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @Data
 public class AuthorMangaId implements Serializable {
-    private Long aId;
-    private Long mId;
+    private Long aid;
+    private Long mid;
 }

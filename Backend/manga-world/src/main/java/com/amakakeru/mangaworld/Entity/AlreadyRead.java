@@ -16,7 +16,7 @@ public class AlreadyRead {
 
     @Id
     @Column(name = "m_id")
-    private Long mId;
+    private Long mid;
 
     @Column(name = "added_date", nullable = false)
     private java.sql.Timestamp addedDate;

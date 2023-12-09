@@ -16,7 +16,7 @@ public class Ongoing {
 
     @Id
     @Column(name = "m_id")
-    private Long mId;
+    private Long mid;
 
     @Column(name = "current_volume", nullable = false)
     private int currentVolume;

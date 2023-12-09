@@ -1,6 +1,6 @@
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import SearchBar from "./SearchBar";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Auth} from "../../../Auth/Auth";
 
 function Header() {
@@ -16,10 +16,10 @@ function Header() {
         userType,
         setUserType,
     } = useContext(Auth);
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
     // useEffect(() => {
     //     if (authorised === "false") {
-    //         navigate("/login");
+    //         navigate("/home");
     //     }
     // }, [authorised, navigate, userId, userType]);
 
@@ -77,13 +77,20 @@ function Header() {
                 )}
 
                 {authorised === "true" && (
-                    <div onClick={(e) => {
-                        setAuthorised("false");
-                        setUserId("");
-                        setUserType("")
-                    }}
-                         className="bg-white hover:bg-gray-300 hover:cursor-pointer text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">Log
-                        Out</div>
+                    <div className="flex">
+                        <Link to="/addNewManga"
+                              className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
+                            Add New
+                        </Link>
+                        <div onClick={(e) => {
+                            setAuthorised("false");
+                            setUserId("");
+                            setUserType("")
+                        }}
+                             className="bg-white hover:bg-gray-300 hover:cursor-pointer text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
+                            Log Out
+                        </div>
+                    </div>
                 )}
 
             </div>

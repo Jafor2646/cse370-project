@@ -11,14 +11,14 @@ import lombok.Data;
 public class CategoryManga {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "c_id")
-    private Long cId;
+    private Long cid;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "m_id")
-    private Long mId;
+    private Long mid;
 
     @ManyToOne
     @JoinColumn(name = "c_id", insertable = false, updatable = false)

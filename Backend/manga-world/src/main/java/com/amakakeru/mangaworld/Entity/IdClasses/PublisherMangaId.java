@@ -8,6 +8,6 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode
 public class PublisherMangaId implements Serializable {
-    private Long pId;
-    private Long mId;
+    private Long pid;
+    private Long mid;
 }

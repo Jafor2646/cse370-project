@@ -14,19 +14,19 @@ public class Volume {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "v_id")
-    private Long vId;
+    private Long vid;
 
     @Column(name = "v_number", nullable = false, columnDefinition = "int default 0")
-    private int vNumber;
+    private int vnumber;
 
     @Column(name = "v_title", nullable = false)
-    private String vTitle;
+    private String vtitle;
 
     @Column(name = "v_release_date", nullable = false)
-    private java.sql.Date vReleaseDate;
+    private java.sql.Date vreleaseDate;
 
     @Column(name = "v_view", nullable = false, columnDefinition = "int default 0")
-    private int vView;
+    private int vview;
 
     @ManyToOne
     @JoinColumn(name = "m_id", nullable = false)

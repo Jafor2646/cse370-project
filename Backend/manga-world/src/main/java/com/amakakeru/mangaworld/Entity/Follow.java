@@ -16,7 +16,7 @@ public class Follow {
 
     @Id
     @Column(name = "a_id")
-    private Long aId;
+    private Long aid;
 
     @ManyToOne
     @JoinColumn(name = "user_id", insertable = false, updatable = false)

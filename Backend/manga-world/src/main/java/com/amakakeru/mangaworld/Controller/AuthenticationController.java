@@ -7,11 +7,11 @@ import com.amakakeru.mangaworld.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -29,13 +29,11 @@ public class AuthenticationController {
             User storedUser = userRepository.findUserByEmail(user.getEmail());
             if (BCrypt.checkpw(user.getPassword(), storedUser.getPassword())) {
                 storedUser.setPassword(null);
-                System.out.println("hey");
                 return ResponseEntity.ok(storedUser);
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Wrong Credential");
             }
-        }
-        else {
+        } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }

@@ -8,6 +8,6 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode
 public class CategoryMangaId implements Serializable {
-    private Long cId;
-    private Long mId;
+    private Long cid;
+    private Long mid;
 }

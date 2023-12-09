@@ -110,7 +110,7 @@ function Login() {
             <div className="flex justify-center items-center h-screen">
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-gray-950 text-white shadow-md rounded-xl px-8 py-8 mb-4"
+                    className="bg-gray-950 bg-opacity-90 text-white shadow-md rounded-xl px-8 py-8 mb-4"
                 >
                     <h2 className="text-2xl font-bold mb-6">Log In</h2>
                     <div className="mb-6">

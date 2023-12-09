@@ -14,16 +14,16 @@ public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "p_id")
-    private Long pId;
+    private Long pid;
 
     @Column(name = "p_name", nullable = false)
-    private String pName;
+    private String pname;
 
     @Column(name = "p_website", nullable = false)
-    private String pWebsite;
+    private String pwebsite;
 
     @Column(name = "p_description", nullable = false, length = 5120)
-    private String pDescription;
+    private String pdescription;
 
     @JsonIgnore
     @OneToOne(mappedBy = "publisher", cascade = CascadeType.ALL, orphanRemoval = true)

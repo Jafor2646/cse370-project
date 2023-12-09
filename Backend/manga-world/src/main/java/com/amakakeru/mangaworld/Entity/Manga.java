@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Objects;
 
 @Data
 @Entity
@@ -14,22 +15,22 @@ public class Manga {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "m_id")
-    private Long mId;
+    private Long mid;
 
     @Column(name = "m_title", nullable = false)
-    private String mTitle;
+    private String mtitle;
 
     @Column(name = "m_status", nullable = false)
-    private String mStatus;
+    private String mstatus;
 
     @Column(name = "m_publish_date", nullable = false)
-    private java.sql.Date mPublishDate;
+    private java.sql.Date mpublishDate;
 
     @Column(name = "m_view", nullable = false, columnDefinition = "int default 0")
-    private int mView;
+    private int mview;
 
     @Column(name = "m_description", nullable = false, length = 5120)
-    private String mDescription;
+    private String mdescription;
 
     @JsonIgnore
     @OneToOne(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -66,4 +67,22 @@ public class Manga {
     @JsonIgnore
     @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PublisherManga> publisherMangas;
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mid, mtitle, mstatus, mpublishDate, mview, mdescription);
+    }
+
+    @Override
+    public String toString() {
+        return "Manga{" +
+                "mid=" + mid +
+                ", mtitle='" + mtitle + '\'' +
+                ", mstatus='" + mstatus + '\'' +
+                ", mpublishDate=" + mpublishDate +
+                ", mview=" + mview +
+                ", mdescription='" + mdescription + '\'' +
+                '}';
+    }
+
 }
