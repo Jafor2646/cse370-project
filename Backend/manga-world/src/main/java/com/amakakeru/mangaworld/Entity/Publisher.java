@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Objects;
 
 @Data
 @Entity
@@ -32,4 +33,19 @@ public class Publisher {
     @JsonIgnore
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PublisherManga> publisherMangas;
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pid, pname, pwebsite, pdescription);
+    }
+
+    @Override
+    public String toString() {
+        return "Publisher{" +
+                "pid=" + pid +
+                ", pname='" + pname + '\'' +
+                ", pwebsite='" + pwebsite + '\'' +
+                ", pdescription='" + pdescription + '\'' +
+                '}';
+    }
 }

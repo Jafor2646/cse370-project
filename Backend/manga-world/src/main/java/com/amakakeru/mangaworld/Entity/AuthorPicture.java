@@ -3,6 +3,8 @@ package com.amakakeru.mangaworld.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Objects;
+
 @Data
 @Entity
 @Table(name = "author_picture")
@@ -19,4 +21,17 @@ public class AuthorPicture {
     @OneToOne
     @JoinColumn(name = "a_id", nullable = false, unique = true)
     private Author author;
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(apId, apPicture);
+    }
+
+    @Override
+    public String toString() {
+        return "AuthorPicture{" +
+                "apId=" + apId +
+                ", apPicture='" + apPicture + '\'' +
+                '}';
+    }
 }

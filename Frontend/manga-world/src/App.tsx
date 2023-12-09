@@ -15,6 +15,7 @@ import PublisherViewer from "./Components/PublisherViewer/PublisherViewer";
 import ChapterViewer from "./Components/ChapterViewer/ChapterViewer";
 import MangaReader from "./Components/MangaReader/MangaReader";
 import AddNewManga from "./Components/AdminView/AddNewManga";
+import SearchView from "./Components/SearchView/SearchView";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "/chapter", element: <ChapterViewer /> },
       { path: "/reader", element: <MangaReader /> },
       { path: "/addNewManga", element: <AddNewManga /> },
+      { path: "/search", element: <SearchView /> },
     ],
   },
 ]);

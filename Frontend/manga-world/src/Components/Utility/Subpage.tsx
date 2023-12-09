@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from "react";
 import Pagination from "./Pagination";
 import Manga from "../../Model/Manga";
-import axios, { AxiosResponse } from "axios";
-import Category from "../../Model/Category";
+import { AxiosResponse } from "axios";
 import Card from "../Card/Card";
-import MangaController from "../../Controller/MangaController";
 
 const Subpage: React.FC<{ fetchMangaData: (pageNumber: number, category: any) => Promise<AxiosResponse<any>>; fetchMangaPageNumber: (category: any) => Promise<AxiosResponse<any>>; element: any; }> = ({ fetchMangaData, fetchMangaPageNumber, element }) => {
     const [currentPage, setCurrentPage] = useState(1);

@@ -19,10 +19,17 @@ public class SearchHistory {
     @Column(name = "sh_search", nullable = false)
     private String shSearch;
 
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
-
     @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @Override
+    public String toString() {
+        return "SearchHistory{" +
+                "shId=" + shId +
+                ", shDate=" + shDate +
+                ", shSearch='" + shSearch + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }

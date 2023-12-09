@@ -4,6 +4,8 @@ import com.amakakeru.mangaworld.Entity.IdClasses.AuthorMangaId;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Objects;
+
 @Data
 @Entity
 @IdClass(AuthorMangaId.class)
@@ -27,4 +29,17 @@ public class AuthorManga {
     @ManyToOne
     @JoinColumn(name = "m_id", insertable = false, updatable = false)
     private Manga manga;
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(aid, mid);
+    }
+
+    @Override
+    public String toString() {
+        return "AuthorManga{" +
+                "aid=" + aid +
+                ", mid=" + mid +
+                '}';
+    }
 }

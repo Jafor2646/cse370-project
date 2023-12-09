@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Objects;
 
 @Data
 @Entity
@@ -36,4 +37,19 @@ public class Author {
     @JsonIgnore
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Follow> follower;
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(aid, aname, awebsite, adescription);
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "aid=" + aid +
+                ", aname='" + aname + '\'' +
+                ", awebsite='" + awebsite + '\'' +
+                ", adescription='" + adescription + '\'' +
+                '}';
+    }
 }

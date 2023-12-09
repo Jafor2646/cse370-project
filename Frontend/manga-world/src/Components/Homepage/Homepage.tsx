@@ -43,10 +43,10 @@ function SmallCard(props: Manga) {
                             )}`}}
                     >
                         <LazyLoadImage
-                            className={`rounded-lg object-fill w-14 h-24 transform hover:scale-110 hover:rounded-xl transition-transform duration-500 ease-in-out`}
+                            className={`rounded-lg object-fill w-16 h-24 transform hover:scale-110 hover:rounded-xl transition-transform duration-500 ease-in-out`}
                             src={mangaImage.mpPicture}
                             alt={manga.mtitle}
-                            width={56}
+                            width={64}
                             height={96}
                             placeholderSrc={require("./../../Assets/Images/Placeholders/manga-placeholder.png")}
                         />
