@@ -263,13 +263,10 @@ CREATE TABLE `wishlist` (
 CREATE TABLE `ongoing` (
   `user_id` int NOT NULL,
   `m_id` int NOT NULL,
-  `current_volume` int DEFAULT 0,
-  `current_chapter` int DEFAULT 0,
+  `added_date` datetime NOT NULL,
   PRIMARY KEY (`user_id`, `m_id`),
   CONSTRAINT `FK_USER_OG` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_MANGA_OG` FOREIGN KEY (`m_id`) REFERENCES `manga` (`m_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_VOLUME_OG` FOREIGN KEY (`current_volume`) REFERENCES `volume` (`v_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_CHAPTER_OG` FOREIGN KEY (`current_chapter`) REFERENCES `chapter` (`c_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_MANGA_OG` FOREIGN KEY (`m_id`) REFERENCES `manga` (`m_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Create Search History Table

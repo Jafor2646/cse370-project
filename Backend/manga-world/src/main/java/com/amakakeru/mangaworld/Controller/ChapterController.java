@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -52,5 +53,14 @@ public class ChapterController {
     @PostMapping("/chapters/addChapterPdf")
     private MangaFile addChapterPdf(@RequestBody MangaFile mangaFile) {
         return mangaFileRepository.save(mangaFile);
+    }
+
+    @PostMapping("/chapters/viewIncrement")
+    public void viewIncrement(@RequestBody Chapter chapter) {
+        Optional<Chapter> chapter1 = chapterRepository.findById(chapter.getCid());
+        if (chapter1.isPresent()) {
+            chapter1.get().setCview(chapter1.get().getCview() + 1);
+            chapterRepository.save(chapter1.get());
+        }
     }
 }

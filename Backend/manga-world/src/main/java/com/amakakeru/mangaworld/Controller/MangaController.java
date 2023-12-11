@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.URLDecoder;
 import java.util.*;
 
@@ -159,4 +161,37 @@ public class MangaController {
             return Collections.emptyList();
         }
     }
+
+    @PostMapping("/mangas/viewIncrement")
+    public void viewIncrement(@RequestBody Manga manga) {
+        Optional<Manga> manga1 = mangaRepository.findById(manga.getMid());
+        if (manga1.isPresent()) {
+            manga1.get().setMview(manga1.get().getMview() + 1);
+            mangaRepository.save(manga1.get());
+        }
+    }
+
+    @PostMapping("/mangas/getAverageRating")
+    public BigDecimal getAverageRating(@RequestBody Manga manga) {
+        List<Rate> rates = rateRepository.findAllByManga(manga);
+        BigDecimal totalRating = BigDecimal.valueOf(0.0);
+
+        for (Rate rate : rates) {
+            totalRating = totalRating.add(rate.getRvalue());
+        }
+
+        if (!rates.isEmpty()) {
+            return totalRating.divide(BigDecimal.valueOf(rates.size()), 1, RoundingMode.HALF_UP);
+        } else {
+            return BigDecimal.ZERO;
+        }
+    }
+
+    @PostMapping("/mangas/getTotalRating")
+    public Integer getTotalRating(@RequestBody Manga manga) {
+        List<Rate> rates = rateRepository.findAllByManga(manga);
+        return rates.size();
+    }
+
+
 }

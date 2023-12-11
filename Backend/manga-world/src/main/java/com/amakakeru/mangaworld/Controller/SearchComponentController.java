@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -57,14 +54,16 @@ public class SearchComponentController {
         try {
             String decodedString = URLDecoder.decode(keyword, "UTF-8");
             keyword = decodedString.substring(0, decodedString.length() - 1);
-            User user = userRepository.findUserByUserId(Long.parseLong(userId));
-            SearchHistory searchHistory = new SearchHistory();
-            searchHistory.setShSearch(keyword);
-            searchHistory.setUser(user);
-            long currentTimeMillis = System.currentTimeMillis();
-            Timestamp timestamp = new Timestamp(currentTimeMillis);
-            searchHistory.setShDate(timestamp);
-            searchHistoryRepository.save(searchHistory);
+            if (!Objects.equals(userId, "0")) {
+                User user = userRepository.findUserByUserId(Long.parseLong(userId));
+                SearchHistory searchHistory = new SearchHistory();
+                searchHistory.setShSearch(keyword);
+                searchHistory.setUser(user);
+                long currentTimeMillis = System.currentTimeMillis();
+                Timestamp timestamp = new Timestamp(currentTimeMillis);
+                searchHistory.setShDate(timestamp);
+                searchHistoryRepository.save(searchHistory);
+            }
 
 
             List<String> tempKeywords = mangaController.getKeywordsFromSearchHistory(keyword);

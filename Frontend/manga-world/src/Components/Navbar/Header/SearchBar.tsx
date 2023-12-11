@@ -55,18 +55,6 @@ function SearchBar() {
         setSearchText(e.target.value);
     };
 
-    // const handleSearchButtonClick = () => {
-    //     navigate({
-    //         pathname: "/search",
-    //         search: `?data=${encodeURIComponent(
-    //             JSON.stringify({
-    //                 searchText: searchText,
-    //             })
-    //         )}`,
-    //     });
-    //     setSearchText("");
-    // };
-
     return (
         <>
             <div className="ms-20 flex-grow">
@@ -92,7 +80,7 @@ function SearchBar() {
                     Search
                 </Link>
             ) : (
-                <div className="bg-white text-black font-bold py-1.5 px-2 rounded-lg opacity-50 cursor-not-allowed focus:outline-none focus:shadow-outline me-20 ms-1">
+                <div className="bg-white text-black hover:cursor-pointer font-bold py-1.5 px-2 rounded-lg focus:outline-none focus:shadow-outline me-20 ms-1 hover:bg-gray-300 hover:text-black hover:border-teal-500 active:bg-gray-500">
                     Search
                 </div>
             )}

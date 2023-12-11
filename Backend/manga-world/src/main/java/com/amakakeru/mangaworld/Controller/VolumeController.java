@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -41,5 +42,14 @@ public class VolumeController {
     @PostMapping("/volumes/addVolumeCover")
     private VolumeCover addVolumeCover(@RequestBody VolumeCover volumeCover) {
         return volumeCoverRepository.save(volumeCover);
+    }
+
+    @PostMapping("/volumes/viewIncrement")
+    public void viewIncrement(@RequestBody Volume volume) {
+        Optional<Volume> volume1 = volumeRepository.findById(volume.getVid());
+        if (volume1.isPresent()) {
+            volume1.get().setVview(volume1.get().getVview() + 1);
+            volumeRepository.save(volume1.get());
+        }
     }
 }

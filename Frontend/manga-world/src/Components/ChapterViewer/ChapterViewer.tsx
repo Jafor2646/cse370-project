@@ -38,6 +38,7 @@ function ChapterViewer() {
 
     useEffect(() => {
         if(selectedVolume){
+            VolumeController.viewIncrement(selectedVolume).then((res) => {});
             VolumeController.findVolumePicture(selectedVolume).then((res) => {
                 setVolumeImage(res.data);
             });

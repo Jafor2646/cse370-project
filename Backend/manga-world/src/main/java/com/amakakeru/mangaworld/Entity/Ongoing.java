@@ -18,11 +18,8 @@ public class Ongoing {
     @Column(name = "m_id")
     private Long mid;
 
-    @Column(name = "current_volume", nullable = false)
-    private int currentVolume;
-
-    @Column(name = "current_chapter", nullable = false)
-    private int currentChapter;
+    @Column(name = "added_date", nullable = false)
+    private java.sql.Timestamp addedDate;
 
     @ManyToOne
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
@@ -31,12 +28,4 @@ public class Ongoing {
     @ManyToOne
     @JoinColumn(name = "m_id", insertable = false, updatable = false)
     private Manga manga;
-
-    @ManyToOne
-    @JoinColumn(name = "current_volume", insertable = false, updatable = false)
-    private Volume volume;
-
-    @ManyToOne
-    @JoinColumn(name = "current_chapter", insertable = false, updatable = false)
-    private Chapter chapter;
 }

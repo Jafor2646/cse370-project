@@ -22,6 +22,10 @@ class ChapterController {
     addChapterPdf(chapterPdf: any) {
         return axios.post(USER_API_BASE_URL + "chapters/addChapterPdf", chapterPdf);
     }
+
+    viewIncrement(chapter: any) {
+        return axios.post(USER_API_BASE_URL + "chapters/viewIncrement", chapter);
+    }
 }
 
 export default new ChapterController();

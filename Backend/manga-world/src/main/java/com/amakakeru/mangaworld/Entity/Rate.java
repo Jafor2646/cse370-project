@@ -24,17 +24,11 @@ public class Rate {
     @Column(name = "r_comment", length = 5120)
     private String rcomment;
 
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
-
-    @Column(name = "m_id", nullable = false)
-    private Long mid;
-
     @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "m_id", insertable = false, updatable = false)
+    @JoinColumn(name = "m_id")
     private Manga manga;
 }

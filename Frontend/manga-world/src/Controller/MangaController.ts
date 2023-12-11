@@ -47,6 +47,18 @@ class MangaController {
         return axios.post(USER_API_BASE_URL + "mangas/searchByKeyword" , keyword);
     }
 
+    mangaViewIncrement(manga:any){
+        return axios.post(USER_API_BASE_URL + "mangas/viewIncrement" , manga);
+    }
+
+    getAverageRating(manga:any){
+        return axios.post(USER_API_BASE_URL + "mangas/getAverageRating" , manga);
+    }
+
+    getTotalRating(manga:any){
+        return axios.post(USER_API_BASE_URL + "mangas/getTotalRating" , manga);
+    }
+
 }
 
 export default new MangaController();

@@ -17,5 +17,9 @@ class VolumeController {
     addVolumeCover(volumeCover:any){
         return axios.post(USER_API_BASE_URL + "volumes/addVolumeCover", volumeCover);
     }
+
+    viewIncrement(volume:any){
+        return axios.post(USER_API_BASE_URL + "volumes/viewIncrement", volume);
+    }
 }
 export default new VolumeController();

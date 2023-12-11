@@ -16,7 +16,7 @@ function VolumeCard(props: Volume) {
 
     return (
         <div>
-            <div className="flex text-white bg-black bg-opacity-25 mt-2 ms-32 me-44 border-2 border-gray-600 hover:bg-black hover:bg-opacity-75 hover:rounded-lg hover:border-gray-400 rounded p-2 hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="flex text-white bg-black bg-opacity-25 mt-2 ms-32 me-32 border-2 border-gray-600 hover:bg-black hover:bg-opacity-75 hover:rounded-lg hover:border-gray-400 rounded-lg p-2 hover:scale-105 transition-transform duration-300 ease-in-out">
                 <LazyLoadImage
                     className={` rounded-lg object-fill w-32 h-44 `}
                     src={volumeImage?.vcPicture}

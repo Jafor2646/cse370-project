@@ -44,6 +44,7 @@ function MangaReader() {
 
     useEffect(() => {
         if(selectedChapter){
+            ChapterController.viewIncrement(selectedChapter).then((res) => {});
             ChapterController.findChapterPicture(selectedChapter).then((res) => {
                 setChapterImage(res.data);
             });
