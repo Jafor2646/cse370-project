@@ -339,7 +339,7 @@ function MangaViewer() {
                                         {" "}[{totalRating} Reviews]
                                     </span>
                                 </div>
-                                {!isRated && authorised === "true" && (
+                                {!isRated && authorised === "true" && hasWishlist === "alreadyread" && (
                                     <div onClick={()=>{setShowReview(true)}} className="mt-1 inline-block cursor-pointer text-blue-500 hover:underline">
                                         Leave A Review
                                     </div>

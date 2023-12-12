@@ -16,6 +16,8 @@ import ChapterViewer from "./Components/ChapterViewer/ChapterViewer";
 import MangaReader from "./Components/MangaReader/MangaReader";
 import AddNewManga from "./Components/AdminView/AddNewManga";
 import SearchView from "./Components/SearchView/SearchView";
+import Profile from "./Components/Profile/Profile";
+import AdminPanel from "./Components/AdminPanel/AdminPanel";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,8 @@ const router = createBrowserRouter([
       { path: "/reader", element: <MangaReader /> },
       { path: "/addNewManga", element: <AddNewManga /> },
       { path: "/search", element: <SearchView /> },
+      { path: "/profile", element: <Profile /> },
+      { path: "/adminPanel", element: <AdminPanel /> },
     ],
   },
 ]);

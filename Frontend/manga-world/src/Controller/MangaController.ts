@@ -59,6 +59,10 @@ class MangaController {
         return axios.post(USER_API_BASE_URL + "mangas/getTotalRating" , manga);
     }
 
+    deleteManga(mangaId: any){
+        return axios.delete(USER_API_BASE_URL + "mangas/deleteManga" + "/" + mangaId);
+    }
+
 }
 
 export default new MangaController();

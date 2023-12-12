@@ -193,5 +193,9 @@ public class MangaController {
         return rates.size();
     }
 
-
+    @DeleteMapping("/mangas/deleteManga/{mangaId}")
+    public void deleteManga(@PathVariable String mangaId) {
+        Manga manga = mangaRepository.findMangaByMid(Long.parseLong(mangaId));
+        mangaRepository.delete(manga);
+    }
 }

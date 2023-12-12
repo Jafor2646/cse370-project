@@ -7,13 +7,13 @@ import com.amakakeru.mangaworld.Repository.AlreadyReadRepository;
 import com.amakakeru.mangaworld.Repository.OngoingRepository;
 import com.amakakeru.mangaworld.Repository.WishlistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 @CrossOrigin("http://localhost:3000")
 @RestController
@@ -110,5 +110,53 @@ public class WishlistController {
         if (alreadyReadRepository.findAlreadyReadByMangaAndUser(wishlist.getManga(), wishlist.getUser()).isPresent()) {
             alreadyReadRepository.delete(alreadyReadRepository.findAlreadyReadByMangaAndUser(wishlist.getManga(), wishlist.getUser()).get());
         }
+    }
+
+    @GetMapping("/getTotalOnGoing/{userId}")
+    public int getTotalOnGoing(@PathVariable String userId) {
+        return ongoingRepository.countOngoingByUserId(Long.parseLong(userId));
+    }
+
+    @GetMapping("/getAllOngoing/{userId}/{pageNumber}")
+    public List<Ongoing> getAllOngoing(@PathVariable String userId, @PathVariable String pageNumber) {
+        Pageable pageable = PageRequest.of(Integer.parseInt(pageNumber), 20);
+        return ongoingRepository.findAllByUserId(Long.parseLong(userId), pageable);
+    }
+
+    @GetMapping("getTotalAlreadyRead/{userId}")
+    public int getTotalAlreadyRead(@PathVariable String userId) {
+        return alreadyReadRepository.countAlreadyReadByUserId(Long.parseLong(userId));
+    }
+
+    @GetMapping("/getAllAlreadyRead/{userId}/{pageNumber}")
+    public List<AlreadyRead> getAllAlreadyRead(@PathVariable String userId, @PathVariable String pageNumber) {
+        Pageable pageable = PageRequest.of(Integer.parseInt(pageNumber), 20);
+        return alreadyReadRepository.findAllByUserId(Long.parseLong(userId), pageable);
+    }
+
+    @GetMapping("/getTotalWishlist/{userId}")
+    public int getTotalWishlist(@PathVariable String userId) {
+        return wishlistRepository.countWishlistByUserId(Long.parseLong(userId));
+    }
+
+    @GetMapping("/getAllWishlist/{userId}/{pageNumber}")
+    public List<Wishlist> getAllWishlist(@PathVariable String userId, @PathVariable String pageNumber) {
+        Pageable pageable = PageRequest.of(Integer.parseInt(pageNumber), 20);
+        return wishlistRepository.findAllByUserId(Long.parseLong(userId), pageable);
+    }
+
+    @PostMapping("/deleteOngoing")
+    public void deleteOngoing(@RequestBody Ongoing ongoing) {
+        ongoingRepository.delete(ongoing);
+    }
+
+    @PostMapping("/deleteAlreadyRead")
+    public void deleteAlreadyRead(@RequestBody AlreadyRead alreadyRead) {
+        alreadyReadRepository.delete(alreadyRead);
+    }
+
+    @PostMapping("/deleteWishlist")
+    public void deleteAlreadyRead(@RequestBody Wishlist wishlist) {
+        wishlistRepository.delete(wishlist);
     }
 }

@@ -17,11 +17,6 @@ function Header() {
         setUserType,
     } = useContext(Auth);
     let navigate = useNavigate();
-    // useEffect(() => {
-    //     if (authorised === "false") {
-    //         navigate("/home");
-    //     }
-    // }, [authorised, navigate, userId, userType]);
 
     return (
         <>
@@ -78,10 +73,22 @@ function Header() {
 
                 {authorised === "true" && (
                     <div className="flex">
-                        <Link to="/addNewManga"
+                        <Link to="/profile"
                               className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
-                            Add New
+                            Profile
                         </Link>
+                        {userType === "admin" && (
+                            <Link to="/addNewManga"
+                                  className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
+                                Add New
+                            </Link>
+                        )}
+                        {userType === "admin" && (
+                            <Link to="/adminPanel"
+                                  className="bg-white hover:bg-gray-300 text-black font-bold py-1.5 px-2 rounded focus:outline-none focus:shadow-outline me-1">
+                                Admin Panel
+                            </Link>
+                        )}
                         <div onClick={(e) => {
                             setAuthorised("false");
                             setUserId("");
