@@ -12,7 +12,9 @@ import java.util.List;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 
+    //    @Query("SELECT a FROM Author a WHERE a.aname = ?1")
     List<Author> findAllByAnameContainingIgnoreCase(String title);
 
+    //    @Query("SELECT a FROM Author a WHERE a.adescription = ?1")
     List<Author> findAllByAdescriptionContainingIgnoreCase(String description);
 }

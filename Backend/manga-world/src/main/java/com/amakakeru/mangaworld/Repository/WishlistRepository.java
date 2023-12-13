@@ -13,9 +13,12 @@ import java.util.Optional;
 @Repository
 public interface WishlistRepository extends JpaRepository<Wishlist, Long> {
 
+    //    @Query("select w from Wishlist w where w.user = ?1")
     Optional<Wishlist> findWishlistByMangaAndUser(Manga manga, User user);
 
+    //    @Query("select w from Wishlist w where w.user.userId = ?1")
     List<Wishlist> findAllByUserId(Long userId, Pageable pageable);
 
+    //    @Query("select count(w) from Wishlist w where w.user.userId = ?1")
     Integer countWishlistByUserId(Long userId);
 }

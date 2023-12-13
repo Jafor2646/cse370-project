@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
+    //    @Query("SELECT c FROM Category c WHERE c.cname = ?1")
     Category findCategoryByCname(String string);
 }

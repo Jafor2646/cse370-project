@@ -36,11 +36,15 @@ public interface MangaRepository extends JpaRepository<Manga, Long> {
     //    @Query(value = "SELECT * FROM manga  WHERE LOWER(m_title) LIKE ?1 OR LOWER(m_description) LIKE ?1", nativeQuery = true)
     List<Manga> findAllByMtitleContainingIgnoreCaseOrMdescriptionContainingIgnoreCase(String title, String description, Pageable pageable);
 
+    //@Query(value = "SELECT * FROM manga  WHERE LOWER(m_title) LIKE ?1 OR LOWER(m_description) LIKE ?1", nativeQuery = true)
     List<Manga> findAllByMtitleContainingIgnoreCase(String keyword, Pageable pageable);
 
+    //    @Query(value = "SELECT * FROM manga  WHERE LOWER(m_title) LIKE ?1 OR LOWER(m_description) LIKE ?1", nativeQuery = true)
     List<Manga> findAllByMtitleContainingIgnoreCase(String keyword);
 
+    //    @Query(value = "SELECT * FROM manga  WHERE LOWER(m_description) LIKE ?1", nativeQuery = true)
     List<Manga> findAllByMdescriptionContainingIgnoreCase(String keyword);
 
+    //    @Query(value = "SELECT * FROM manga  WHERE LOWER(m_title) LIKE ?1 OR LOWER(m_description) LIKE ?1", nativeQuery = true)
     Manga findMangaByMid(Long mangaId);
 }

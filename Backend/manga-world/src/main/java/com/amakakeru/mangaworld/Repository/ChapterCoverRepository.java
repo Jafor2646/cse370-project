@@ -10,5 +10,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @Repository
 public interface ChapterCoverRepository extends JpaRepository<ChapterCover, Long> {
 
+    //    @Query("SELECT c FROM ChapterCover c WHERE c.chapter = ?1")
     ChapterCover findChapterCoverByChapter(Chapter chapter);
 }

@@ -10,5 +10,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @Repository
 public interface AuthorPictureRepository extends JpaRepository<AuthorPicture, Long> {
 
+    //    @Query("SELECT ap FROM AuthorPicture ap WHERE ap.author = ?1")
     AuthorPicture findAuthorPictureByAuthor(Author author);
 }

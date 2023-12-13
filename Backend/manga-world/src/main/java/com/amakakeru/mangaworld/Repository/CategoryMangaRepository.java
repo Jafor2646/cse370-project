@@ -10,7 +10,9 @@ import java.util.List;
 
 @Repository
 public interface CategoryMangaRepository extends JpaRepository<CategoryManga, Long> {
+    //    @Query("SELECT cm FROM CategoryManga cm WHERE cm.category = ?1")
     List<CategoryManga> findCategoryMangaByCategory(Category category, Pageable pageable);
 
+    //    @Query("SELECT cm FROM CategoryManga cm WHERE cm.category = ?1")
     List<CategoryManga> findCategoryMangaCountByCategory(Category category);
 }

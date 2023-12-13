@@ -13,12 +13,16 @@ import java.util.Optional;
 @Repository
 public interface FollowRepository extends JpaRepository<Follow, Long> {
 
+    //    @Query("SELECT f FROM Follow f WHERE f.author = ?1 AND f.user = ?2")
     Optional<Follow> findFollowByAuthorAndUser(Author author, User user);
 
+    //    @Query("SELECT f FROM Follow f WHERE f.author = ?1")
     List<Follow> findAllByAuthor(Author author);
 
+    //    @Query("SELECT f FROM Follow f WHERE f.user = ?1")
     List<Follow> findAllByUserId(Long userId, Pageable pageable);
 
+    //    @Query("SELECT COUNT(f) FROM Follow f WHERE f.user = ?1")
     Integer countFollowsByUserId(Long userId);
 
 }

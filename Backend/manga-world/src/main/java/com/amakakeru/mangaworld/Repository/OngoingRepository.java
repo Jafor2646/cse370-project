@@ -13,9 +13,12 @@ import java.util.Optional;
 @Repository
 public interface OngoingRepository extends JpaRepository<Ongoing, Long> {
 
+    //    @Query("SELECT o FROM Ongoing o WHERE o.user.id = ?1 AND o.manga.id = ?2")
     Optional<Ongoing> findOngoingByMangaAndUser(Manga manga, User user);
 
+    //    @Query("SELECT o FROM Ongoing o WHERE o.user.id = ?1")
     List<Ongoing> findAllByUserId(Long userId, Pageable pageable);
 
+    //    @Query("SELECT COUNT(o) FROM Ongoing o WHERE o.user.id = ?1")
     Integer countOngoingByUserId(Long userId);
 }

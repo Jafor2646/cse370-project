@@ -12,9 +12,12 @@ import java.util.List;
 @Repository
 public interface PublisherMangaRepository extends JpaRepository<PublisherManga, Long> {
 
+    //    @Query("SELECT p FROM PublisherManga p WHERE p.manga.id = ?1 AND p.publisher.id = ?2")
     PublisherManga findAllByManga(Manga manga);
 
+    //    @Query("SELECT p FROM PublisherManga p WHERE p.publisher.id = ?1")
     List<PublisherManga> findAllByPublisher(Publisher publisher);
 
+    //    @Query("SELECT p FROM PublisherManga p WHERE p.publisher.id = ?1")
     List<PublisherManga> findPublisherMangasByPublisher(Publisher publisher, Pageable pageable);
 }

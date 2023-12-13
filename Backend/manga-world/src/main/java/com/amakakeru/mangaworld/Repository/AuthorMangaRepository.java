@@ -12,9 +12,12 @@ import java.util.List;
 @Repository
 public interface AuthorMangaRepository extends JpaRepository<AuthorManga, Long> {
 
+    //    @Query("SELECT a FROM AuthorManga a WHERE a.manga = ?1 AND a.author = ?2")
     List<AuthorManga> findAllByManga(Manga manga);
 
+    //    @Query("SELECT a FROM AuthorManga a WHERE a.manga = ?1 AND a.author = ?2")
     List<AuthorManga> findAllByAuthor(Author author);
 
+    //    @Query("SELECT a FROM AuthorManga a WHERE a.manga = ?1 AND a.author = ?2")
     List<AuthorManga> findAuthorMangasByAuthor(Author author, Pageable pageable);
 }

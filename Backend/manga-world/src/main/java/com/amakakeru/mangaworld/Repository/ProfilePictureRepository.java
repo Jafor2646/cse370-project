@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProfilePictureRepository extends JpaRepository<ProfilePicture, Long> {
 
+    //    @Query("SELECT p FROM ProfilePicture p WHERE p.user.id = ?1")
     ProfilePicture findProfilePictureByUser(User user);
 }
