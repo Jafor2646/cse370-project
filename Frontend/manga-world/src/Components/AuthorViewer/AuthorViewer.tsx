@@ -135,12 +135,12 @@ function AuthorViewer() {
                                 </div>
                             </div>
                             <div className="mt-10">
-                                {!currentlyFollowing && (
+                                {!currentlyFollowing && authorised === "true" && (
                                     <div onClick={onFollow} className=" bg-white ps-4 pe-4 pt-2 pb-2 text-xl font-bold rounded hover:cursor-pointer hover:bg-green-100 hover:scale-105 transition-transform duration-300 ease-in-out">
                                         Follow
                                     </div>
                                 )}
-                                {currentlyFollowing && (
+                                {currentlyFollowing && authorised === "true" && (
                                     <div onClick={onUnfollow} className=" bg-white ps-4 pe-4 pt-2 pb-2 text-xl font-bold rounded hover:cursor-pointer hover:bg-red-100 hover:scale-105 transition-transform duration-300 ease-in-out">
                                         Unfollow
                                     </div>

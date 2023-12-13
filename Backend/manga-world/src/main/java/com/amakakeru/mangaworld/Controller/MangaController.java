@@ -77,9 +77,12 @@ public class MangaController {
                 int min = 1;
                 int max = totalMangaCount;
                 int randomValueInRange = random.nextInt(max - min + 1) + min;
-                Manga manga = mangaRepository.findById((long) randomValueInRange).get();
-                if (!mangas.contains(manga)) {
-                    mangas.add(manga);
+                Optional<Manga> mangaOptional = mangaRepository.findById((long) randomValueInRange);
+                if (mangaOptional.isPresent()) {
+                    Manga manga = mangaOptional.get();
+                    if (!mangas.contains(manga)) {
+                        mangas.add(manga);
+                    }
                 }
             }
         }
